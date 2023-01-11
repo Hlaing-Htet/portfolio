@@ -1,5 +1,7 @@
+import { NavLinkStyle } from "./NavLinkStyle";
+
 import React from "react";
-import { NavLink } from "react-router-dom";
+
 import { AiFillHome } from "react-icons/ai";
 import { SiAboutdotme } from "react-icons/si";
 import { GiSkills } from "react-icons/gi";
@@ -8,47 +10,22 @@ import { AiFillContacts } from "react-icons/ai";
 const Navbar = () => {
   return (
     <nav>
-      <div className="flex flex-col z-20 gap-10 justify-center bg-primary h-screen w-14 fixed top-0 left-0">
-        <NavLink
-          to={"/"}
-          className={({ isActive }) =>
-            isActive ? " text-textcolor" : " text-darkbackground"
-          }
-        >
+      <div className="flex flex-col z-20 gap-10 justify-center bg-primary h-screen w-14 ">
+        <NavLinkStyle to={"/"} text="HOME">
           <AiFillHome className=" w-full text-2xl" />
-        </NavLink>
-        <NavLink
-          to={"/about"}
-          className={({ isActive }) =>
-            isActive ? " text-textcolor" : " text-darkbackground"
-          }
-        >
+        </NavLinkStyle>
+        <NavLinkStyle to={"/about"} text="ABOUT">
           <SiAboutdotme className=" w-full text-2xl" />
-        </NavLink>
-        <NavLink
-          to={"/skills"}
-          className={({ isActive }) =>
-            isActive ? " text-textcolor" : " text-darkbackground"
-          }
-        >
+        </NavLinkStyle>
+        <NavLinkStyle to={"/skills"} text="SKILLS">
           <GiSkills className=" w-full text-2xl" />
-        </NavLink>
-        <NavLink
-          to={"/projects"}
-          className={({ isActive }) =>
-            isActive ? " text-textcolor" : " text-darkbackground"
-          }
-        >
+        </NavLinkStyle>
+        <NavLinkStyle to={"/projects"} text="PROJECTS">
           <AiFillProject className=" w-full text-2xl" />
-        </NavLink>
-        <NavLink
-          to={"/contact"}
-          className={({ isActive }) =>
-            isActive ? " text-textcolor" : " text-darkbackground"
-          }
-        >
+        </NavLinkStyle>
+        <NavLinkStyle to={"/contact"} text="CONTACT">
           <AiFillContacts className=" w-full text-2xl" />
-        </NavLink>
+        </NavLinkStyle>
       </div>
     </nav>
   );

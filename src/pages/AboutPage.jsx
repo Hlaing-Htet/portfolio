@@ -25,7 +25,7 @@ const AboutPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className=" bg-darkbackground  h-screen overflow-hidden"
+        className=" flex flex-col flex-grow bg-darkbackground  h-screen overflow-hidden"
       >
         <ReactAudioPlayer
           src={music}
@@ -34,8 +34,8 @@ const AboutPage = () => {
           volume={0.1}
         />
 
-        <Title name={"About Me"} className=" h-1/4" />
-        <div className="h-3/4 grid grid-cols-3">
+        <Title name={"About Me"} className="" />
+        <div className=" flex-grow grid grid-cols-3">
           <motion.div
             initial={{
               x: "-100vw",
@@ -44,11 +44,7 @@ const AboutPage = () => {
             transition={{ delay: 0.2 }}
             className=" col-span-1 relative"
           >
-            <img
-              src={Photo}
-              className=" w-full absolute left-14 -top-5"
-              alt=""
-            />
+            <img src={Photo} className=" w-full " alt="" />
           </motion.div>
           <motion.div
             initial={{ x: "100vw" }}

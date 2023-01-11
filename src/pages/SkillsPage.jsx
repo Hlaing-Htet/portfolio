@@ -12,7 +12,7 @@ const SkillsPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className=" bg-darkbackground h-screen overflow-x-hidden"
+        className=" bg-darkbackground h-screen flex-grow overflow-x-hidden"
       >
         <ReactAudioPlayer
           src={music}

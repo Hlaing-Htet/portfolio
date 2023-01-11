@@ -30,7 +30,7 @@ export function Tools() {
   return (
     <div className=" mb-10">
       {name === "frontend" && (
-        <div className=" grid grid-cols-1 ml-14 p-5 gap-5 md:grid-cols-4">
+        <div className=" grid grid-cols-1  p-5 gap-5 md:grid-cols-4">
           <Skill HTML={HTML} name={"HTML"} rate="Experienced" time={0.1} />
           <Skill HTML={CSS} name={"CSS"} rate="Intermediate" time={0.2} />
           <Skill HTML={JS} name={"JavaScript"} rate="Experienced" time={0.3} />
@@ -54,7 +54,7 @@ export function Tools() {
         </div>
       )}
       {name === "backend" && (
-        <div className=" grid grid-cols-1 ml-14 p-5 gap-5 md:grid-cols-4">
+        <div className=" grid grid-cols-1  p-5 gap-5 md:grid-cols-4">
           <Skill
             HTML={NODEJS}
             name={"Note Js"}
@@ -78,14 +78,14 @@ export function Tools() {
         </div>
       )}
       {name === "design-tools" && (
-        <div className=" grid grid-cols-1 ml-14 p-5 gap-5 md:grid-cols-4">
+        <div className=" grid grid-cols-1  p-5 gap-5 md:grid-cols-4">
           <Skill HTML={Figma} name={"figma"} rate="Experienced" time={0.1} />
           <Skill HTML={Ps} name={"PhotoShop"} rate="Basic" time={0.2} />
           <Skill HTML={Ai} name={"Ai"} rate="Basic" time={0.3} />
         </div>
       )}
       {name === "others-tools" && (
-        <div className=" grid grid-cols-1 ml-14 p-5 gap-5 md:grid-cols-4">
+        <div className=" grid grid-cols-1  p-5 gap-5 md:grid-cols-4">
           <Skill HTML={VsCode} name={"vscode"} rate="Experienced" time={0.1} />
           <Skill HTML={VN} name={"VN"} rate="Intermediate" time={0.2} />
           <Skill HTML={OBS} name={"OBS"} rate="Intermediate" time={0.3} />

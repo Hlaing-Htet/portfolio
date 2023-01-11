@@ -33,7 +33,7 @@ const HomePage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className=" overflow-hidden grid grid-cols-2 bg-darkbackground h-screen"
+        className=" flex-grow overflow-hidden grid grid-cols-2 bg-darkbackground h-screen"
       >
         <motion.div
           initial={{ x: "-100vw" }}
@@ -41,9 +41,18 @@ const HomePage = () => {
           transition={{ delay: 0.2 }}
           className=" col-span-1 h-full bg-background"
         >
-          <img
+          <motion.img
+            animate={{
+              x: [0, 150, -150, 0],
+              rotate: [0, 10, -10, 0],
+            }}
+            transition={{
+              ease: "linear",
+              duration: 2,
+              repeat: Infinity,
+            }}
             src={HeroImg}
-            className="h-full absolute saturate-0 transition-all duration-300 left-32 hover:saturate-100"
+            className="h-full absolute saturate-0 transition-all duration-300 left-24 hover:saturate-100"
             alt=""
           />
         </motion.div>

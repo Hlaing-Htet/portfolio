@@ -11,7 +11,7 @@ const ProjectsPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className=" bg-darkbackground h-screen overflow-hidden"
+        className=" flex-grow bg-darkbackground h-screen overflow-hidden"
       >
         <ReactAudioPlayer
           src={music}

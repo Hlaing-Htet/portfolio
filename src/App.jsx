@@ -12,22 +12,27 @@ import SkillsPage from "./pages/SkillsPage";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/skills" element={<SkillsPage />}>
-          <Route path=":name" element={<Tools />} />
-          <Route path="" element={<Navigate to={"/skills/frontend"} />} />
-        </Route>
-        <Route path="/projects" element={<ProjectsPage />}>
-          <Route path=":name" element={<Projects />} />
-          <Route path="" element={<Navigate to={"/projects/uiux-designs"} />} />
-        </Route>
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </BrowserRouter>
+    <div className=" flex">
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/skills" element={<SkillsPage />}>
+            <Route path=":name" element={<Tools />} />
+            <Route path="" element={<Navigate to={"/skills/frontend"} />} />
+          </Route>
+          <Route path="/projects" element={<ProjectsPage />}>
+            <Route path=":name" element={<Projects />} />
+            <Route
+              path=""
+              element={<Navigate to={"/projects/uiux-designs"} />}
+            />
+          </Route>
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 };
 
