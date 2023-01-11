@@ -1,8 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Title } from "../components/Title";
-import music from "../assets/music/downfall.mp3";
-import ReactAudioPlayer from "react-audio-player";
+
 import { NavLink, Outlet } from "react-router-dom";
 
 const SkillsPage = () => {
@@ -14,12 +13,6 @@ const SkillsPage = () => {
         exit={{ opacity: 0 }}
         className=" bg-darkbackground h-screen flex-grow overflow-x-hidden"
       >
-        <ReactAudioPlayer
-          src={music}
-          loop={true}
-          autoPlay={true}
-          volume={0.1}
-        />
         <Title name={"Skills"} />
         <nav className=" bg-darkbackground sticky top-32 flex z-10 justify-center gap-8 mb-5 border-b-2 border-primary">
           <NavLink

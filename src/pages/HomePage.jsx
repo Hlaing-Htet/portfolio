@@ -1,14 +1,20 @@
 import { ContactBtn } from "./../components/ContactBtn";
-import React from "react";
+import React, { useState } from "react";
 import HeroImg from "../assets/homeColor.png";
 import Union from "../assets/Union.svg";
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import music from "../assets/music/downfall.mp3";
-import ReactAudioPlayer from "react-audio-player";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube,
+  FaGithub,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 const HomePage = () => {
+  const [isHover, setIsHover] = useState(false);
   const el = useRef(null);
   const typed = useRef(null);
   useEffect(() => {
@@ -40,11 +46,13 @@ const HomePage = () => {
           animate={{ x: 0 }}
           transition={{ delay: 0.2 }}
           className=" col-span-1 h-full bg-background"
+          onMouseEnter={() => setIsHover(true)}
+          onMouseLeave={() => setIsHover(false)}
         >
           <motion.img
             animate={{
-              x: [0, 150, -150, 0],
-              rotate: [0, 10, -10, 0],
+              x: [0, 5, -5, 0],
+              rotate: [0, 5, -5, 0],
             }}
             transition={{
               ease: "linear",
@@ -55,6 +63,75 @@ const HomePage = () => {
             className="h-full absolute saturate-0 transition-all duration-300 left-24 hover:saturate-100"
             alt=""
           />
+          {isHover && (
+            <div className=" absolute top-1/2 -translate-y-1/2 right-6 flex flex-col gap-20">
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  delay: 0,
+                }}
+                className="   bg-primary p-1 duration-300 hover:scale-150"
+              >
+                <FaFacebookF />
+              </motion.button>
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  delay: 0.1,
+                }}
+                className="  bg-primary p-1 duration-300 hover:scale-150"
+              >
+                <FaInstagram />
+              </motion.button>
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  delay: 0.2,
+                }}
+                className="  bg-primary p-1 duration-300 hover:scale-150"
+              >
+                <FaYoutube />
+              </motion.button>
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  delay: 0.3,
+                }}
+                className="    bg-primary p-1 duration-300 hover:scale-150"
+              >
+                <FaGithub />
+              </motion.button>
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  delay: 0.4,
+                }}
+                className="    bg-primary p-1 duration-300 hover:scale-150"
+              >
+                <FaLinkedinIn />
+              </motion.button>
+            </div>
+          )}
         </motion.div>
         <motion.div
           initial={{ x: "100vw" }}
@@ -90,12 +167,7 @@ const HomePage = () => {
             className="absolute left-2/3 top-2/3 w-12"
             alt=""
           />
-          <ReactAudioPlayer
-            loop={true}
-            src={music}
-            autoPlay={true}
-            volume={0.1}
-          />
+
           <div className=" flex flex-col gap-10  justify-center h-4/5">
             <h1 className=" text-textcolor text-5xl">Hi THERE!</h1>
             <p>

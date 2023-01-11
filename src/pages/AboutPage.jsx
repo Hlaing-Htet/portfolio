@@ -1,6 +1,6 @@
 import { ExperienceCard } from "../components/../components/ExperienceCard";
 import { Title } from "./../components/Title";
-import React from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Photo from "../assets/homeColor.png";
 //icons
@@ -15,9 +15,6 @@ import { FaServer } from "react-icons/fa";
 import { FaPhotoVideo } from "react-icons/fa";
 import { ContactBtn } from "../components/ContactBtn";
 
-import music from "../assets/music/downfall.mp3";
-import ReactAudioPlayer from "react-audio-player";
-
 const AboutPage = () => {
   return (
     <AnimatePresence>
@@ -27,13 +24,6 @@ const AboutPage = () => {
         exit={{ opacity: 0 }}
         className=" flex flex-col flex-grow bg-darkbackground  h-screen overflow-hidden"
       >
-        <ReactAudioPlayer
-          src={music}
-          loop={true}
-          autoPlay={true}
-          volume={0.1}
-        />
-
         <Title name={"About Me"} className="" />
         <div className=" flex-grow grid grid-cols-3">
           <motion.div

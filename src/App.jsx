@@ -9,12 +9,14 @@ import Contact from "./pages/Contact";
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import SkillsPage from "./pages/SkillsPage";
+import MusicPlayer from "./components/MusicPlayer";
 
 const App = () => {
   return (
     <div className=" flex">
       <BrowserRouter>
         <Navbar />
+        <MusicPlayer />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
