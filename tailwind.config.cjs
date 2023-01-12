@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     colors: {
       primary: "#c9a227",
-      background: "#343a40",
+      background: "#1a1a1a",
       textcolor: "#e9ecef",
-      darkbackground: "#212529",
+      darkbackground: "#101010",
     },
     fontFamily: {
       sans: ["Montserrat", "sans-serif"],
