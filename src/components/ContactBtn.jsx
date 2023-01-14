@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-export function ContactBtn({}) {
+export function ContactBtn() {
+  const themeColor = "#c9a227";
+
   return (
     <Link to={"/contact"}>
       <motion.button
@@ -14,7 +16,8 @@ export function ContactBtn({}) {
             repeat: Infinity,
           },
         }}
-        className=" bg-primary p-5 px-10 text-xl font-medium"
+        className=" p-5 px-10   text-xl font-medium"
+        style={{ backgroundColor: themeColor }}
       >
         CONTACT
       </motion.button>

@@ -8,9 +8,14 @@ import { GiSkills } from "react-icons/gi";
 import { AiFillProject } from "react-icons/ai";
 import { AiFillContacts } from "react-icons/ai";
 const Navbar = () => {
+  const themeColor = "#c9a227";
+
   return (
     <nav>
-      <div className="flex flex-col z-20 gap-10 justify-center bg-primary h-screen w-14 ">
+      <div
+        className="flex flex-col z-20 gap-10 justify-center  h-screen w-14 "
+        style={{ backgroundColor: themeColor }}
+      >
         <NavLinkStyle to={"/"} text="HOME">
           <AiFillHome className=" w-full text-2xl" />
         </NavLinkStyle>

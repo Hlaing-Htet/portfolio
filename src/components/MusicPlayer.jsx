@@ -5,6 +5,8 @@ import { SiYoutubemusic } from "react-icons/si";
 import { motion } from "framer-motion";
 import { BiMusic } from "react-icons/bi";
 const MusicPlayer = () => {
+  const themeColor = "#c9a227";
+
   const [click, setClick] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   useEffect(() => {
@@ -50,7 +52,10 @@ const MusicPlayer = () => {
             }
           }
         >
-          <SiYoutubemusic className=" text-5xl text-primary" />
+          <SiYoutubemusic
+            className=" text-5xl "
+            style={{ color: themeColor }}
+          />
         </motion.button>
         <ReactAudioPlayer
           onPlay={() => setClick(true)}
@@ -81,19 +86,19 @@ const MusicPlayer = () => {
               duration: 2,
               repeat: Infinity,
             }}
-            className="bg-primary   relative"
+            className=" relative"
           >
-            <motion.button className=" absolute left-8  -top-2 ">
-              <BiMusic className=" text-primary " />
+            <motion.button className=" absolute left-12  -top-2 ">
+              <BiMusic style={{ color: themeColor }} />
             </motion.button>
-            <motion.button className=" absolute -left-12  -top-2">
-              <BiMusic className=" text-primary " />
+            <motion.button className=" absolute -left-16  -top-2">
+              <BiMusic style={{ color: themeColor }} />
             </motion.button>
-            <motion.button className=" absolute top-8 -left-2 ">
-              <BiMusic className=" text-primary " />
+            <motion.button className=" absolute top-12 -left-2 ">
+              <BiMusic style={{ color: themeColor }} />
             </motion.button>
-            <motion.button className=" absolute -top-12 -left-2 ">
-              <BiMusic className=" text-primary" />
+            <motion.button className=" absolute -top-16 -left-2 ">
+              <BiMusic style={{ color: themeColor }} />
             </motion.button>
           </motion.div>
         </motion.div>

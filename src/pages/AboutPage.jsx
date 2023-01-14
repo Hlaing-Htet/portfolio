@@ -16,13 +16,15 @@ import { FaPhotoVideo } from "react-icons/fa";
 import { ContactBtn } from "../components/ContactBtn";
 
 const AboutPage = () => {
+  const themeColor = "#c9a227";
+
   return (
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className=" flex flex-col flex-grow bg-darkbackground  h-screen overflow-hidden"
+        className=" flex-grow  bg-light_background dark:bg-dark_background overflow-hidden  h-screen"
       >
         <Title name={"About Me"} className="" />
         <div className=" flex-grow grid grid-cols-3">
@@ -32,61 +34,81 @@ const AboutPage = () => {
             }}
             animate={{ x: 0 }}
             transition={{ delay: 0.2 }}
-            className=" col-span-1 relative"
+            className=" col-span-1"
           >
-            <img src={Photo} className=" w-full " alt="" />
+            <img src={Photo} className=" w-full" alt="" />
           </motion.div>
           <motion.div
             initial={{ x: "100vw" }}
             animate={{ x: 0 }}
-            className=" col-span-2  px-5 pt-10"
+            className=" col-span-2  p-5  flex flex-col"
           >
-            <div className=" h-1/5 grid grid-cols-4 gap-5">
-              <ExperienceCard name={"Scrvices"} parag={"What I Offer ?"}>
-                <RiServiceFill className=" w-full text-3xl text-darkbackground" />
+            <div className="  grid grid-cols-4 gap-5">
+              <ExperienceCard name={"Services"} parag={"What I Offer ?"}>
+                <RiServiceFill className=" w-full text-3xl text-light_background dark:text-dark_background" />
               </ExperienceCard>
               <ExperienceCard name={"Experience"} parag={"3+ years Working"}>
-                <MdOutlineCastForEducation className=" w-full text-3xl text-darkbackground" />
+                <MdOutlineCastForEducation className=" w-full text-3xl text-light_background dark:text-dark_background" />
               </ExperienceCard>
               <ExperienceCard name={"Experience"} parag={"3+ years Working"}>
-                <BsAwardFill className=" w-full text-3xl text-darkbackground" />
+                <BsAwardFill className=" w-full text-3xl text-light_background dark:text-dark_background" />
               </ExperienceCard>
               <ExperienceCard name={"Experience"} parag={"3+ years Working"}>
-                <AiFillProject className=" w-full text-3xl text-darkbackground" />
+                <AiFillProject className=" w-full text-3xl text-light_background dark:text-dark_background" />
               </ExperienceCard>
             </div>
-            <div className=" h-4/5 flex flex-col justify-center">
-              <h3 className=" text-textcolor font-semibold text-xl mt-10">
+            <div className=" flex-grow  flex flex-col justify-center">
+              <h3 className=" text-light_textcolor dark:text-dark_textcolor font-semibold text-xl mt-5">
                 What I do ?
               </h3>
               <div className=" grid grid-cols-2 gap-5 my-10">
                 <div className=" flex items-center gap-5">
                   <span>
-                    <MdOutlineDraw className=" text-primary text-6xl" />
+                    <MdOutlineDraw
+                      className="  text-6xl"
+                      style={{ color: themeColor }}
+                    />
                   </span>
-                  <span className=" text-textcolor">Drawing Web Design</span>
+                  <span className=" text-light_textcolor dark:text-dark_textcolor">
+                    Drawing Web Design
+                  </span>
                 </div>
                 <div className=" flex items-center gap-5">
                   <span>
-                    <FaCode className=" text-primary text-6xl" />
+                    <FaCode
+                      className=" text-6xl"
+                      style={{ color: themeColor }}
+                    />
                   </span>
-                  <span className=" text-textcolor">Writing FrontEnd </span>
+                  <span className=" text-light_textcolor dark:text-dark_textcolor">
+                    Writing FrontEnd{" "}
+                  </span>
                 </div>
                 <div className=" flex items-center gap-5">
                   <span>
-                    <FaServer className=" text-primary text-6xl" />
+                    <FaServer
+                      className=" text-6xl"
+                      style={{ color: themeColor }}
+                    />
                   </span>
-                  <span className=" text-textcolor">Writing BackEnd </span>
+                  <span className=" text-light_textcolor dark:text-dark_textcolor">
+                    Writing BackEnd{" "}
+                  </span>
                 </div>
                 <div className=" flex items-center gap-5">
                   <span>
-                    <FaPhotoVideo className=" text-primary text-6xl" />
+                    <FaPhotoVideo
+                      className=" text-6xl"
+                      style={{ color: themeColor }}
+                    />
                   </span>
-                  <span className=" text-textcolor">Video Editing</span>
+                  <span className=" text-light_textcolor dark:text-dark_textcolor">
+                    Video Editing
+                  </span>
                 </div>
               </div>
-              <ContactBtn />
             </div>
+            <ContactBtn />
           </motion.div>
         </div>
       </motion.div>
