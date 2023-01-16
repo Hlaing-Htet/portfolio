@@ -28,7 +28,7 @@ export function Tools() {
   const { name } = useParams();
 
   return (
-    <div className=" mb-10">
+    <div className="">
       {name === "frontend" && (
         <div className=" grid grid-cols-1  p-5 gap-5 md:grid-cols-4">
           <Skill HTML={HTML} name={"HTML"} rate="Experienced" time={0.1} />

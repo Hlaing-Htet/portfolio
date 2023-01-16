@@ -4,7 +4,7 @@ export function Title({ name }) {
   const themeColor = "#c9a227";
 
   return (
-    <div className=" z-10  sticky top-3">
+    <div className=" ">
       <motion.h1
         initial={{
           y: "-100vh",
@@ -15,7 +15,7 @@ export function Title({ name }) {
         transition={{
           delay: 0.2,
         }}
-        className=" text-light_textcolor dark:text-dark_textcolor  w-fit mx-auto border-2 border-dotted  font-semibold py-10 px-52 mt-5 text-2xl "
+        className=" bg-light_background dark:bg-dark_background text-light_textcolor dark:text-dark_textcolor  w-fit mx-auto border-2 border-dotted  font-semibold py-10 md:px-52 px-24 text-2xl "
       >
         {name}
       </motion.h1>

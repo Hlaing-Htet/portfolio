@@ -190,7 +190,7 @@ const HomePage = () => {
                 FullStack Developer
               </p>
             </div>
-            <p className=" dark:text-dark_textcolor text-light_textcolor w-2/3">
+            <p className=" dark:text-dark_textcolor opacity-60 text-light_textcolor w-2/3">
               Love to create designs and coding . In good logical Thinking and
               Problem Solving
             </p>

@@ -6,7 +6,7 @@ module.exports = {
       dark_background_soft: "#1a1a1a",
       dark_textcolor: "#e9ecef",
       dark_background: "#101010",
-      light_background_soft: "#ddd",
+      light_background_soft: "#eee",
       light_background: "#fefefe",
       light_textcolor: "#333333",
     },
