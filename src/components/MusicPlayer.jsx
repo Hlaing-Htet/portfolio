@@ -28,6 +28,7 @@ const MusicPlayer = () => {
     default: {
       x: mousePosition.x - 2,
       y: mousePosition.y - 2,
+      mixBlendMode: "difference",
     },
   };
 

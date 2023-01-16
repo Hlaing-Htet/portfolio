@@ -26,12 +26,12 @@ const AboutPage = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className=" flex-grow  bg-light_background dark:bg-dark_background overflow-hidden  h-screen"
+          className=" flex-grow flex flex-col  bg-light_background dark:bg-dark_background overflow-hidden  h-screen"
         >
-          <div className=" pt-5">
+          <div className="  pt-5">
             <Title name={"About Me"} className="" />
           </div>
-          <div className=" flex-grow grid grid-cols-3">
+          <div className=" my-auto  grid grid-cols-3">
             <motion.div
               initial={{
                 x: "-100vw",
