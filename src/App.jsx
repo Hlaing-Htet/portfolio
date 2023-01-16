@@ -10,13 +10,13 @@ import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import SkillsPage from "./pages/SkillsPage";
 import MusicPlayer from "./components/MusicPlayer";
+import AdminPage from "./pages/AdminPage";
 
 const App = () => {
   return (
-    <div className=" flex">
+    <>
+      <MusicPlayer />
       <BrowserRouter>
-        <Navbar />
-        <MusicPlayer />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -32,9 +32,10 @@ const App = () => {
             />
           </Route>
           <Route path="/contact" element={<Contact />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </>
   );
 };
 
