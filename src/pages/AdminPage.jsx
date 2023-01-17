@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import { GoPlus } from "react-icons/go";
 const AdminPage = () => {
   const themeColor = "#c9a227";
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <div className=" w-screen h-screen flex justify-center  items-center dark:bg-dark_background">
@@ -82,6 +85,7 @@ const AdminPage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
+            onSubmit={handleSubmit}
             className=" w-full px-5 flex flex-col gap-5"
           >
             <div className=" ">
@@ -102,9 +106,12 @@ const AdminPage = () => {
                 id=""
               />
             </div>
-            <button className=" p-2 px-4 bg-dark_background w-fit mx-auto dark:text-dark_textcolor hover:scale-110">
+            <Link
+              to={"/admin/dashboard"}
+              className=" p-2 px-4 bg-dark_background w-fit mx-auto dark:text-dark_textcolor hover:scale-110"
+            >
               login
-            </button>
+            </Link>
           </motion.form>
         </div>
       </motion.div>

@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import { Tools } from "./components/Tools";
 import AboutPage from "./pages/AboutPage";
@@ -11,7 +10,8 @@ import ProjectsPage from "./pages/ProjectsPage";
 import SkillsPage from "./pages/SkillsPage";
 import MusicPlayer from "./components/MusicPlayer";
 import AdminPage from "./pages/AdminPage";
-
+import DashboradPage from "./pages/DashboradPage";
+import Home from "./components/dashboard/Home";
 const App = () => {
   return (
     <>
@@ -33,6 +33,29 @@ const App = () => {
           </Route>
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/admin/dashboard" element={<DashboradPage />}>
+            <Route path="home" element={<Home />} />
+            <Route
+              path="about"
+              element={<p className=" text-dark_textcolor">about</p>}
+            />
+            <Route
+              path="skills"
+              element={<p className=" text-dark_textcolor">skills</p>}
+            />
+            <Route
+              path="projects"
+              element={<p className=" text-dark_textcolor">projects</p>}
+            />
+            <Route
+              path="contact"
+              element={<p className=" text-dark_textcolor">contact</p>}
+            />
+            <Route
+              path=""
+              element={<Navigate to={"/admin/dashboard/home"} />}
+            />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>

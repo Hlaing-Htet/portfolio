@@ -14,6 +14,7 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 import AppLayout from "../layouts/AppLayout";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const themeColor = "#c9a227";
@@ -60,7 +61,7 @@ const HomePage = () => {
               }}
               transition={{
                 ease: "linear",
-                duration: 2,
+                duration: 5,
                 repeat: Infinity,
               }}
               src={HeroImg}
@@ -170,7 +171,12 @@ const HomePage = () => {
               }}
               className="absolute left-2/3 top-2/3"
             >
-              <GoPlus className=" text-5xl  " style={{ color: themeColor }} />
+              <Link to={"/admin"}>
+                <GoPlus
+                  className=" text-5xl cursor-default  "
+                  style={{ color: themeColor }}
+                />
+              </Link>
             </motion.div>
 
             <div className=" flex flex-col gap-10  justify-center h-4/5">
