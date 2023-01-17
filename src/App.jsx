@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import Projects from "./components/Projects";
+import ProjectsByTitle from "./components/ProjectsByTitle";
 import { Tools } from "./components/Tools";
 import AboutPage from "./pages/AboutPage";
-import Contact from "./pages/Contact";
+import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import SkillsPage from "./pages/SkillsPage";
@@ -12,6 +12,11 @@ import MusicPlayer from "./components/MusicPlayer";
 import AdminPage from "./pages/AdminPage";
 import DashboradPage from "./pages/DashboradPage";
 import Home from "./components/dashboard/Home";
+import About from "./components/dashboard/About";
+import Skills from "./components/dashboard/Skills";
+import Projects from "./components/dashboard/Projects";
+import Contact from "./components/dashboard/Contact";
+
 const App = () => {
   return (
     <>
@@ -25,32 +30,20 @@ const App = () => {
             <Route path="" element={<Navigate to={"/skills/frontend"} />} />
           </Route>
           <Route path="/projects" element={<ProjectsPage />}>
-            <Route path=":name" element={<Projects />} />
+            <Route path=":name" element={<ProjectsByTitle />} />
             <Route
               path=""
               element={<Navigate to={"/projects/uiux-designs"} />}
             />
           </Route>
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/admin/dashboard" element={<DashboradPage />}>
             <Route path="home" element={<Home />} />
-            <Route
-              path="about"
-              element={<p className=" text-dark_textcolor">about</p>}
-            />
-            <Route
-              path="skills"
-              element={<p className=" text-dark_textcolor">skills</p>}
-            />
-            <Route
-              path="projects"
-              element={<p className=" text-dark_textcolor">projects</p>}
-            />
-            <Route
-              path="contact"
-              element={<p className=" text-dark_textcolor">contact</p>}
-            />
+            <Route path="about" element={<About />} />
+            <Route path="skills" element={<Skills />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="contact" element={<Contact />} />
             <Route
               path=""
               element={<Navigate to={"/admin/dashboard/home"} />}

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Title } from "../components/Title";
 import AppLayout from "../layouts/AppLayout";
 
-const Contact = () => {
+const ContactPage = () => {
   return (
     <AnimatePresence>
       <AppLayout>
@@ -20,4 +20,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactPage;
