@@ -16,6 +16,7 @@ import About from "./components/dashboard/About";
 import Skills from "./components/dashboard/Skills";
 import Projects from "./components/dashboard/Projects";
 import Contact from "./components/dashboard/Contact";
+import Themes from "./components/dashboard/Themes";
 
 const App = () => {
   return (
@@ -44,6 +45,7 @@ const App = () => {
             <Route path="skills" element={<Skills />} />
             <Route path="projects" element={<Projects />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="themes" element={<Themes />} />
             <Route
               path=""
               element={<Navigate to={"/admin/dashboard/home"} />}

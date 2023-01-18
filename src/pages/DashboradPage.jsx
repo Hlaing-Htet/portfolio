@@ -8,14 +8,6 @@ const DashboradPage = () => {
   return (
     <div className=" grid grid-cols-5">
       <div className=" col-span-1  h-screen dark:bg-dark_background_soft">
-        {/* <figure className="w-24 h-24 overflow-hidden rounded-full mx-auto">
-          <img
-            src={Photo}
-            className=" object-contain "
-            alt=""
-            style={{ backgroundColor: themeColor }}
-          />
-        </figure> */}
         <Link to={"/"}>
           <h1
             className=" text-2xl font-bold text-center m-5 underline"
@@ -83,6 +75,18 @@ const DashboradPage = () => {
               }
             >
               Contact
+            </NavLink>
+          </li>
+          <li className=" bg-dark_textcolor mb-2   text-center w-4/5 mx-auto">
+            <NavLink
+              to={"themes"}
+              className={({ isActive }) =>
+                isActive
+                  ? " text-dark_textcolor block p-2 bg-dark_background border border-dark_textcolor"
+                  : " text-dark_background p-2 block"
+              }
+            >
+              Themes
             </NavLink>
           </li>
         </ul>
