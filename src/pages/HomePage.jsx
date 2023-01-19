@@ -1,10 +1,11 @@
+import { TypedText } from "./../components/TypedText";
+import React, { useState, useEffect, useRef } from "react";
+//components
 import { ContactBtn } from "./../components/ContactBtn";
-import React, { useState } from "react";
 import HeroImg from "../assets/homeColor.png";
 
-import Typed from "typed.js";
-import { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+//icons
 import { GoPlus } from "react-icons/go";
 import {
   FaFacebookF,
@@ -15,28 +16,17 @@ import {
 } from "react-icons/fa";
 import AppLayout from "../layouts/AppLayout";
 import { Link } from "react-router-dom";
+//service
+import { GetHomeData } from "../service/HomeData/GetHomeData";
 
 const HomePage = () => {
   const themeColor = "#c9a227";
   const [isHover, setIsHover] = useState(false);
-  const el = useRef(null);
-  const typed = useRef(null);
-  useEffect(() => {
-    const options = {
-      strings: ["HLAING HTET", "WEB DEVELOPER"],
-      startDelay: 300,
-      typeSpeed: 150,
-      backDelay: 150,
-      backSpeed: 150,
-      smartBackspace: true,
-      showCursor: false,
-      loop: true,
-    };
-    typed.current = new Typed(el.current, options);
-    return () => {
-      typed.current.destroy();
-    };
-  }, []);
+  const { homeDatas, loading } = GetHomeData();
+  if (loading) {
+    return null;
+  }
+  const data = homeDatas?.result[0];
   return (
     <AnimatePresence>
       <AppLayout>
@@ -187,23 +177,18 @@ const HomePage = () => {
                 <span className=" dark:text-dark_textcolor text-light_textcolor text-4xl">
                   I'M{" "}
                 </span>
-                <span
-                  className=" font-name text-5xl"
-                  style={{ color: themeColor }}
-                  ref={el}
-                ></span>
+                <TypedText text={data.typed_text} />
               </p>
               <div
                 className=" p-3 w-3/4"
                 style={{ backgroundColor: themeColor }}
               >
                 <p className=" text-xl text-light_textcolor font-medium">
-                  FullStack Developer
+                  {data?.work_title}
                 </p>
               </div>
               <p className=" dark:text-dark_textcolor opacity-60 text-light_textcolor w-2/3">
-                Love to create designs and coding . In good logical Thinking and
-                Problem Solving
+                {data?.desc}
               </p>
             </div>
             <ContactBtn />

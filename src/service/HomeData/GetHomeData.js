@@ -4,7 +4,7 @@ import { useHomeContext } from "../../hooks/UseHomeContext";
 
 export const GetHomeData = () => {
   const { homeDatas, dispatch } = useHomeContext();
-  const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
