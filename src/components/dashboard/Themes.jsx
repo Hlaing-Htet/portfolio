@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { SwatchesPicker, CirclePicker } from "react-color";
+import { CirclePicker } from "react-color";
+import { motion } from "framer-motion";
 import { Title } from "../Title";
 
 const Themes = () => {
@@ -9,7 +10,21 @@ const Themes = () => {
       <header className=" bg-dark_background z-10  sticky top-0 pt-5">
         <Title name={"Themes Page"} />
       </header>
-      <main className=" m-5">
+      <motion.main
+        initial={{
+          y: "100vh",
+        }}
+        animate={{
+          y: 0,
+        }}
+        transition={{
+          delay: 0.1,
+          type: "spring",
+          damping: 25,
+          stiffness: 250,
+        }}
+        className=" m-5"
+      >
         <div className=" flex justify-center flex-col items-center gap-10 dark:bg-dark_background_soft p-10">
           <h2 className=" text-xl font-semibold" style={{ color: themeColor }}>
             Choose Color
@@ -42,7 +57,7 @@ const Themes = () => {
             className="justify-center"
           />
         </div>
-      </main>
+      </motion.main>
     </div>
   );
 };

@@ -1,13 +1,32 @@
 import React from "react";
 import { Title } from "../Title";
+import { motion } from "framer-motion";
 import Photo from "../../assets/homeColor.png";
+//services
+import { GetHomeData } from "../../service/HomeData/GetHomeData";
 const Home = () => {
+  const { homeDatas, loading } = GetHomeData();
+  console.log(homeDatas);
   return (
     <div className="dark:text-dark_textcolor  h-screen overflow-auto">
       <header className=" bg-dark_background  z-10  sticky top-0 py-5">
         <Title name={"Home Page"} />
       </header>
-      <main className=" m-5  ">
+      <motion.main
+        initial={{
+          y: "100vh",
+        }}
+        animate={{
+          y: 0,
+        }}
+        transition={{
+          delay: 0.1,
+          type: "spring",
+          damping: 25,
+          stiffness: 250,
+        }}
+        className=" m-5  "
+      >
         <div className=" mb-5">
           <h2 className=" text-xl font-medium mb-2">Work Title</h2>
           <div className=" bg-dark_background_soft p-5">
@@ -49,7 +68,7 @@ const Home = () => {
             <p className="opacity-80">FullStack Developer</p>
           </div>
         </div>
-      </main>
+      </motion.main>
     </div>
   );
 };
