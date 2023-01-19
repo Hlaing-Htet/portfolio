@@ -17,73 +17,73 @@ const DashboradPage = () => {
           </h1>
         </Link>
         <ul className=" mt-20">
-          <li className=" bg-dark_textcolor mb-2   text-center w-4/5 mx-auto">
+          <li className=" bg-dark_background mb-2   text-center w-4/5 mx-auto">
             <NavLink
               to={"home"}
               className={({ isActive }) =>
                 isActive
-                  ? " text-dark_textcolor block p-2 bg-dark_background border border-dark_textcolor"
-                  : " text-dark_background p-2 block"
+                  ? " bg-dark_textcolor block p-2"
+                  : " text-dark_textcolor p-2 block"
               }
             >
               Home
             </NavLink>
           </li>
-          <li className=" bg-dark_textcolor mb-2   text-center w-4/5 mx-auto">
+          <li className=" bg-dark_background mb-2   text-center w-4/5 mx-auto">
             <NavLink
               to={"about"}
               className={({ isActive }) =>
                 isActive
-                  ? " text-dark_textcolor block p-2 bg-dark_background border border-dark_textcolor"
-                  : " text-dark_background p-2 block"
+                  ? " bg-dark_textcolor block p-2 "
+                  : " text-dark_textcolor p-2 block"
               }
             >
               About
             </NavLink>
           </li>
-          <li className=" bg-dark_textcolor mb-2   text-center w-4/5 mx-auto">
+          <li className=" bg-dark_background mb-2   text-center w-4/5 mx-auto">
             <NavLink
               to={"skills"}
               className={({ isActive }) =>
                 isActive
-                  ? " text-dark_textcolor block p-2 bg-dark_background border border-dark_textcolor"
-                  : " text-dark_background p-2 block"
+                  ? " bg-dark_textcolor block p-2 "
+                  : " text-dark_textcolor p-2 block"
               }
             >
               Skills
             </NavLink>
           </li>
-          <li className=" bg-dark_textcolor mb-2   text-center w-4/5 mx-auto">
+          <li className=" bg-dark_background mb-2   text-center w-4/5 mx-auto">
             <NavLink
               to={"projects"}
               className={({ isActive }) =>
                 isActive
-                  ? " text-dark_textcolor block p-2 bg-dark_background border border-dark_textcolor"
-                  : " text-dark_background p-2 block"
+                  ? " bg-dark_textcolor block p-2 "
+                  : " text-dark_textcolor p-2 block"
               }
             >
               Projects
             </NavLink>
           </li>
-          <li className=" bg-dark_textcolor mb-2   text-center w-4/5 mx-auto">
+          <li className=" bg-dark_background mb-2   text-center w-4/5 mx-auto">
             <NavLink
               to={"contact"}
               className={({ isActive }) =>
                 isActive
-                  ? " text-dark_textcolor block p-2 bg-dark_background border border-dark_textcolor"
-                  : " text-dark_background p-2 block"
+                  ? " bg-dark_textcolor block p-2 "
+                  : " text-dark_textcolor p-2 block"
               }
             >
               Contact
             </NavLink>
           </li>
-          <li className=" bg-dark_textcolor mb-2   text-center w-4/5 mx-auto">
+          <li className=" bg-dark_background mb-2   text-center w-4/5 mx-auto">
             <NavLink
               to={"themes"}
               className={({ isActive }) =>
                 isActive
-                  ? " text-dark_textcolor block p-2 bg-dark_background border border-dark_textcolor"
-                  : " text-dark_background p-2 block"
+                  ? " bg-dark_textcolor block p-2 "
+                  : " text-dark_textcolor p-2 block"
               }
             >
               Themes
