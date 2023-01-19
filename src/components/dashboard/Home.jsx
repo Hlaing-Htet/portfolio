@@ -1,3 +1,4 @@
+import { HomeTypedTexts } from "./HomeTypedTexts";
 import { HomeEditTitleDesc } from "./HomeEditTitleDesc";
 
 import React from "react";
@@ -34,18 +35,6 @@ const Home = () => {
         }}
         className=" m-5  "
       >
-        <HomeEditTitleDesc data={data} val="work_title" />
-        <HomeEditTitleDesc data={data} val="desc" />
-        <div className=" mb-5">
-          <h2 className=" text-xl font-medium mb-2">Typed Texts</h2>
-          <div className=" bg-dark_background_soft p-5 ">
-            <ul className=" list-disc opacity-80">
-              {data?.typed_text.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
         <div className=" mb-5">
           <h2 className=" text-xl font-medium mb-2">Photo</h2>
           <div className=" bg-dark_background_soft p-5 grid grid-cols-4">
@@ -57,6 +46,9 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <HomeEditTitleDesc data={data} val="work_title" />
+        <HomeEditTitleDesc data={data} val="desc" />
+        <HomeTypedTexts data={data} />
         <div className=" mb-5">
           <h2 className=" text-xl font-medium mb-2">Socials</h2>
           <div className=" bg-dark_background_soft p-5">

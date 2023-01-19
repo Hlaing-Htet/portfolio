@@ -8,21 +8,15 @@ export const homeContextReducer = (state, action) => {
       return {
         homeDatas: action.payload,
       };
-    case "CREATE_HOMEDATA":
-      return {
-        homeDatas: [action.payload, ...state.homeDatas],
-      };
-    case "DELETE_HOMEDATA":
-      return {
-        homeDatas: state.homeDatas.filter(
-          (data) => data._id !== action.payload._id
-        ),
-      };
+
     case "UPDATE_HOMEDATA":
+      const data = state.homeDatas.result.map((data) =>
+        data._id === action.payload.result._id
+          ? { ...action.payload, result: [action.payload.result] }
+          : data
+      );
       return {
-        homeDatas: state.homeDatas.map((data) =>
-          data._id === action.payload._id ? action.payload : data
-        ),
+        homeDatas: data[0],
       };
     default:
       return state;
@@ -31,7 +25,7 @@ export const homeContextReducer = (state, action) => {
 
 export const HomeContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(homeContextReducer, {
-    homeDatas: {},
+    homeDatas: [],
   });
 
   return (
