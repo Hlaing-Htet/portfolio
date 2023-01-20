@@ -24,7 +24,7 @@ export function TypedText({ text }) {
   }, []);
   return (
     <span
-      className=" font-name text-5xl"
+      className=" font-name uppercase text-5xl"
       style={{
         color: themeColor,
       }}

@@ -1,3 +1,4 @@
+import { HomePhoto } from "./HomePhoto";
 import { HomeTypedTexts } from "./HomeTypedTexts";
 import { HomeEditTitleDesc } from "./HomeEditTitleDesc";
 
@@ -35,17 +36,7 @@ const Home = () => {
         }}
         className=" m-5  "
       >
-        <div className=" mb-5">
-          <h2 className=" text-xl font-medium mb-2">Photo</h2>
-          <div className=" bg-dark_background_soft p-5 grid grid-cols-4">
-            <figure className=" bg-dark_background">
-              <img src={Photo} className=" block mx-auto" alt="" />
-            </figure>
-            <div className=" col-span-3 flex items-center justify-center flex-col">
-              <input type="file" />
-            </div>
-          </div>
-        </div>
+        {/* <HomePhoto Photo={Photo} /> */}
         <HomeEditTitleDesc data={data} val="work_title" />
         <HomeEditTitleDesc data={data} val="desc" />
         <HomeTypedTexts data={data} />
