@@ -39,14 +39,14 @@ const HomePage = () => {
             initial={{ x: "-100vw" }}
             animate={{ x: 0 }}
             transition={{ delay: 0.2 }}
-            className=" col-span-1 h-full bg-light_background_soft dark:bg-dark_background_soft"
+            className=" col-span-1 h-full flex items-center justify-center bg-light_background_soft dark:bg-dark_background_soft"
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
           >
             <motion.img
               animate={{
                 x: [0, 5, -5, 0],
-                rotate: [0, 5, -5, 0],
+                rotate: [0, 1, -1, 0],
               }}
               transition={{
                 ease: "linear",
@@ -54,11 +54,11 @@ const HomePage = () => {
                 repeat: Infinity,
               }}
               src={`${import.meta.env.VITE_IMG_URL}/${data.image}`}
-              className="h-full absolute saturate-0 transition-all duration-300 left-16 hover:saturate-100"
+              className=" h-full object-contain  saturate-0 transition-all duration-300  hover:saturate-100"
               alt=""
             />
             {isHover && (
-              <div className=" absolute top-1/2 -translate-y-1/2 right-6 flex flex-col gap-20">
+              <div className=" fixed top-1/2 -translate-y-1/2 right-6 flex flex-col gap-20">
                 <motion.button
                   initial={{ opacity: 0 }}
                   animate={{
