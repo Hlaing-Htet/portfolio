@@ -4,7 +4,11 @@ import Photo from "../assets/homeColor.png";
 import { MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { GoPlus } from "react-icons/go";
+import { useHomeContext } from "../hooks/UseHomeContext";
 const AdminPage = () => {
+  const { homeDatas } = useHomeContext();
+  const data = homeDatas.result[0];
+  console.log(data);
   const themeColor = "#c9a227";
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -64,7 +68,7 @@ const AdminPage = () => {
               duration: 5,
               repeat: Infinity,
             }}
-            src={Photo}
+            src={`${import.meta.env.VITE_IMG_URL}/${data.image}`}
             className=" saturate-0 w-full   "
             alt=""
           />

@@ -36,7 +36,7 @@ const Home = () => {
         }}
         className=" m-5  "
       >
-        {/* <HomePhoto Photo={Photo} /> */}
+        <HomePhoto data={data} />
         <HomeEditTitleDesc data={data} val="work_title" />
         <HomeEditTitleDesc data={data} val="desc" />
         <HomeTypedTexts data={data} />

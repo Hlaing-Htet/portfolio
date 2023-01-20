@@ -2,7 +2,6 @@ import { TypedText } from "./../components/TypedText";
 import React, { useState, useEffect, useRef } from "react";
 //components
 import { ContactBtn } from "./../components/ContactBtn";
-import HeroImg from "../assets/homeColor.png";
 
 import { motion, AnimatePresence } from "framer-motion";
 //icons
@@ -54,8 +53,8 @@ const HomePage = () => {
                 duration: 5,
                 repeat: Infinity,
               }}
-              src={HeroImg}
-              className="h-full absolute saturate-0 transition-all duration-300 left-24 hover:saturate-100"
+              src={`${import.meta.env.VITE_IMG_URL}/${data.image}`}
+              className="h-full absolute saturate-0 transition-all duration-300 left-16 hover:saturate-100"
               alt=""
             />
             {isHover && (
