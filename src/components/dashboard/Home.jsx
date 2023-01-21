@@ -6,15 +6,17 @@ import { HomeEditTitleDesc } from "./HomeEditTitleDesc";
 import React from "react";
 import { Title } from "../Title";
 import { motion } from "framer-motion";
-import Photo from "../../assets/homeColor.png";
+
 //services
+import { GetSocials } from "../../service/Socials/GetSocials";
 import { GetHomeData } from "../../service/HomeData/GetHomeData";
 const Home = () => {
+  const { socials, loading: socialsLoading } = GetSocials();
   const { homeDatas, loading } = GetHomeData();
-  if (loading) {
+  if (loading && socialsLoading) {
     return null;
   }
-
+  // console.log(socials);
   const data = homeDatas?.result[0];
 
   return (
