@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FiEdit } from "react-icons/fi";
 import { ImCancelCircle } from "react-icons/im";
 import { useForm } from "react-hook-form";
-import { useSocialsContext } from "../../hooks/UseSocialsContext";
+import { useSocialsContext } from "../../../hooks/UseSocialsContext";
 export function HomeSocial({}) {
   const { socials, dispatch } = useSocialsContext();
   console.log(socials);

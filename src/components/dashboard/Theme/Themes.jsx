@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { CirclePicker } from "react-color";
 import { motion } from "framer-motion";
-import { Title } from "../Title";
+import { Title } from "../../Title";
 
 const Themes = () => {
   const [themeColor, setThemeColor] = useState("#c9a227");

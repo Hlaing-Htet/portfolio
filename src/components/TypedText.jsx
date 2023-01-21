@@ -8,7 +8,7 @@ export function TypedText({ text }) {
   const typed = useRef(null);
   useEffect(() => {
     const options = {
-      strings: text,
+      strings: text ? text : ["Hlaing Htet"],
       startDelay: 300,
       typeSpeed: 150,
       backDelay: 150,

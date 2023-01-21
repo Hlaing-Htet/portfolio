@@ -4,20 +4,20 @@ import { HomeTypedTexts } from "./HomeTypedTexts";
 import { HomeEditTitleDesc } from "./HomeEditTitleDesc";
 
 import React from "react";
-import { Title } from "../Title";
+import { Title } from "../../Title";
 import { motion } from "framer-motion";
 
 //services
-import { GetSocials } from "../../service/Socials/GetSocials";
-import { GetHomeData } from "../../service/HomeData/GetHomeData";
+import { GetSocials } from "../../../service/Socials/GetSocials";
+import { GetHomeData } from "../../../service/HomeData/GetHomeData";
 const Home = () => {
   const { socials, loading: socialsLoading } = GetSocials();
   const { homeDatas, loading } = GetHomeData();
   if (loading && socialsLoading) {
-    return null;
+    return <p>Loading</p>;
   }
-  // console.log(socials);
-  const data = homeDatas?.result[0];
+
+  const data = homeDatas;
 
   return (
     <div className="dark:text-dark_textcolor  h-screen overflow-auto">

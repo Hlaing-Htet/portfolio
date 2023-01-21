@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FiEdit } from "react-icons/fi";
 import { ImCancelCircle } from "react-icons/im";
-import { useHomeContext } from "../../hooks/UseHomeContext";
+import { useHomeContext } from "../../../hooks/UseHomeContext";
 export function HomePhoto({ data }) {
   const [edit, setEdit] = useState(false);
 
@@ -23,7 +23,7 @@ export function HomePhoto({ data }) {
     );
     const json = await response.json();
     if (response.ok) {
-      dispatch({ type: "UPDATE_HOMEDATA", payload: json });
+      dispatch({ type: "UPDATE_HOMEDATA", payload: json.result });
       setEdit(false);
     }
   };
@@ -50,7 +50,7 @@ export function HomePhoto({ data }) {
       <div className=" bg-dark_background_soft p-5 grid grid-cols-4">
         <figure className=" bg-dark_background">
           <img
-            src={`${import.meta.env.VITE_IMG_URL}/${data.image}`}
+            src={`${import.meta.env.VITE_IMG_URL}/${data?.image}`}
             className=" block mx-auto"
             alt=""
           />

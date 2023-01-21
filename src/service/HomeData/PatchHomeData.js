@@ -21,7 +21,7 @@ export const PatchHomeData = ({ id, data, setEdit = null }) => {
     console.log(data);
     const json = await response.json();
     if (response.ok) {
-      dispatch({ type: "UPDATE_HOMEDATA", payload: json });
+      dispatch({ type: "UPDATE_HOMEDATA", payload: json.result });
       if (setEdit) {
         setEdit(false);
       }

@@ -11,12 +11,12 @@ import SkillsPage from "./pages/SkillsPage";
 import MusicPlayer from "./components/MusicPlayer";
 import AdminPage from "./pages/AdminPage";
 import DashboradPage from "./pages/DashboradPage";
-import Home from "./components/dashboard/Home";
-import About from "./components/dashboard/About";
-import Skills from "./components/dashboard/Skills";
-import Projects from "./components/dashboard/Projects";
-import Contact from "./components/dashboard/Contact";
-import Themes from "./components/dashboard/Themes";
+import Home from "./components/dashboard/Home/Home";
+import About from "./components/dashboard/About/About";
+import Skills from "./components/dashboard/Skills/Skills";
+import Projects from "./components/dashboard/Projects/Projects";
+import Contact from "./components/dashboard/Contact/Contact";
+import Themes from "./components/dashboard/Theme/Themes";
 
 const App = () => {
   return (

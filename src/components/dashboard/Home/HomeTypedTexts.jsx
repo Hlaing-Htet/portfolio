@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { FiEdit } from "react-icons/fi";
 import { ImCancelCircle } from "react-icons/im";
-import { PatchHomeData } from "../../service/HomeData/PatchHomeData";
+import { PatchHomeData } from "../../../service/HomeData/PatchHomeData";
 export function HomeTypedTexts({ data }) {
   const [edit, setEdit] = useState(false);
   const [value, setValue] = useState(data?.typed_text);
@@ -68,7 +68,7 @@ export function HomeTypedTexts({ data }) {
           </div>
         )}
         <ul className=" list-disc opacity-80">
-          {value.map((item) => (
+          {value?.map((item) => (
             <li key={item} className="mb-2">
               <span>{item}</span>
               {edit && (

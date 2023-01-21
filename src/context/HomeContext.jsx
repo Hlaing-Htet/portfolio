@@ -6,17 +6,15 @@ export const homeContextReducer = (state, action) => {
   switch (action.type) {
     case "SET_HOMEDATA":
       return {
-        homeDatas: action.payload,
+        homeDatas: action.payload[0],
       };
 
     case "UPDATE_HOMEDATA":
-      const data = state.homeDatas.result.map((data) =>
-        data._id === action.payload.result._id
-          ? { ...action.payload, result: [action.payload.result] }
-          : data
-      );
       return {
-        homeDatas: data[0],
+        homeDatas:
+          state.homeDatas._id === action.payload._id
+            ? action.payload
+            : state.homeDatas,
       };
     default:
       return state;
@@ -25,7 +23,7 @@ export const homeContextReducer = (state, action) => {
 
 export const HomeContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(homeContextReducer, {
-    homeDatas: [],
+    homeDatas: {},
   });
 
   return (

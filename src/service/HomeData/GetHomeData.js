@@ -23,7 +23,7 @@ export const GetHomeData = () => {
       if (response.ok) {
         setLoading(false);
 
-        dispatch({ type: "SET_HOMEDATA", payload: json });
+        dispatch({ type: "SET_HOMEDATA", payload: json.result });
       }
     };
     fetchHomeDatas();

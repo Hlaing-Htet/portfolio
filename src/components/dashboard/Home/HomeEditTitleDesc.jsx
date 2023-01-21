@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiEdit } from "react-icons/fi";
 import { ImCancelCircle } from "react-icons/im";
-import { PatchHomeData } from "../../service/HomeData/PatchHomeData";
+import { PatchHomeData } from "../../../service/HomeData/PatchHomeData";
 export function HomeEditTitleDesc({ data, val }) {
   const [edit, setEdit] = useState(false);
   const [value, setValue] = useState(data?.[val]);

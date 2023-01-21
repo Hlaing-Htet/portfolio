@@ -25,7 +25,7 @@ const HomePage = () => {
   if (loading) {
     return null;
   }
-  const data = homeDatas?.result[0];
+  const data = homeDatas;
   return (
     <AnimatePresence>
       <AppLayout>
@@ -53,7 +53,7 @@ const HomePage = () => {
                 duration: 5,
                 repeat: Infinity,
               }}
-              src={`${import.meta.env.VITE_IMG_URL}/${data.image}`}
+              src={`${import.meta.env.VITE_IMG_URL}/${data?.image}`}
               className=" h-full object-contain  saturate-0 transition-all duration-300  hover:saturate-100"
               alt=""
             />
@@ -176,7 +176,7 @@ const HomePage = () => {
                 <span className=" dark:text-dark_textcolor text-light_textcolor text-4xl">
                   I'M{" "}
                 </span>
-                <TypedText text={data.typed_text} />
+                <TypedText text={data?.typed_text} />
               </p>
               <div
                 className=" p-3 w-3/4"
