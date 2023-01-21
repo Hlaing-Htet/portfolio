@@ -62,7 +62,7 @@ export function HomePhoto({ data }) {
           <input
             type="file"
             {...register("file")}
-            className=" bg-dark_textcolor text-dark_background cursor-pointer"
+            className=" bg-dark_textcolor p-3 text-dark_background cursor-pointer"
           />
           {edit && (
             <button

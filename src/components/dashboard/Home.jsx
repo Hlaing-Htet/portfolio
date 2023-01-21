@@ -1,3 +1,4 @@
+import { HomeSocial } from "./HomeSocial";
 import { HomePhoto } from "./HomePhoto";
 import { HomeTypedTexts } from "./HomeTypedTexts";
 import { HomeEditTitleDesc } from "./HomeEditTitleDesc";
@@ -40,12 +41,7 @@ const Home = () => {
         <HomeEditTitleDesc data={data} val="work_title" />
         <HomeEditTitleDesc data={data} val="desc" />
         <HomeTypedTexts data={data} />
-        <div className=" mb-5">
-          <h2 className=" text-xl font-medium mb-2">Socials</h2>
-          <div className=" bg-dark_background_soft p-5">
-            <p className="opacity-80">FullStack Developer</p>
-          </div>
-        </div>
+        <HomeSocial />
       </motion.main>
     </div>
   );
