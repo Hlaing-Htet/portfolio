@@ -18,7 +18,6 @@ export const PatchHomeData = ({ id, data, setEdit = null }) => {
         body: JSON.stringify(data),
       }
     );
-    console.log(data);
     const json = await response.json();
     if (response.ok) {
       dispatch({ type: "UPDATE_HOMEDATA", payload: json.result });
