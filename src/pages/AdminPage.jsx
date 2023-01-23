@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Photo from "../assets/homeColor.png";
+
 import { MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { GoPlus } from "react-icons/go";
-import { useHomeContext } from "../hooks/UseHomeContext";
+import { GetHomeData } from "../service/HomeData/GetHomeData";
 const AdminPage = () => {
-  const { homeDatas } = useHomeContext();
-  const data = homeDatas.result[0];
+  const { homeDatas } = GetHomeData();
+  const data = homeDatas;
   console.log(data);
   const themeColor = "#c9a227";
   const handleSubmit = (e) => {

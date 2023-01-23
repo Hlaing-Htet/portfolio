@@ -1,30 +1,27 @@
 import { TypedText } from "./../components/TypedText";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 //components
 import { ContactBtn } from "./../components/ContactBtn";
 
 import { motion, AnimatePresence } from "framer-motion";
 //icons
 import { GoPlus } from "react-icons/go";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaYoutube,
-  FaGithub,
-  FaLinkedinIn,
-} from "react-icons/fa";
+
 import AppLayout from "../layouts/AppLayout";
 import { Link } from "react-router-dom";
 //service
 import { GetHomeData } from "../service/HomeData/GetHomeData";
+import { GetSocials } from "../service/Socials/GetSocials";
 
 const HomePage = () => {
   const themeColor = "#c9a227";
   const [isHover, setIsHover] = useState(false);
   const { homeDatas, loading } = GetHomeData();
-  if (loading) {
+  const { socials, loading: socialsLoading } = GetSocials();
+  if (loading && socialsLoading) {
     return null;
   }
+
   const data = homeDatas;
   return (
     <AnimatePresence>
@@ -59,72 +56,33 @@ const HomePage = () => {
             />
             {isHover && (
               <div className=" fixed top-1/2 -translate-y-1/2 right-6 flex flex-col gap-20">
-                <motion.button
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: 1,
-                  }}
-                  exit={{ opacity: 0 }}
-                  transition={{
-                    delay: 0,
-                  }}
-                  className="    p-1 duration-300 hover:scale-150"
-                  style={{ backgroundColor: themeColor }}
-                >
-                  <FaFacebookF />
-                </motion.button>
-                <motion.button
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: 1,
-                  }}
-                  exit={{ opacity: 0 }}
-                  transition={{
-                    delay: 0.1,
-                  }}
-                  className="  bg-primary p-1 duration-300 hover:scale-150"
-                >
-                  <FaInstagram />
-                </motion.button>
-                <motion.button
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: 1,
-                  }}
-                  exit={{ opacity: 0 }}
-                  transition={{
-                    delay: 0.2,
-                  }}
-                  className="  bg-primary p-1 duration-300 hover:scale-150"
-                >
-                  <FaYoutube />
-                </motion.button>
-                <motion.button
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: 1,
-                  }}
-                  exit={{ opacity: 0 }}
-                  transition={{
-                    delay: 0.3,
-                  }}
-                  className="    bg-primary p-1 duration-300 hover:scale-150"
-                >
-                  <FaGithub />
-                </motion.button>
-                <motion.button
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: 1,
-                  }}
-                  exit={{ opacity: 0 }}
-                  transition={{
-                    delay: 0.4,
-                  }}
-                  className="    bg-primary p-1 duration-300 hover:scale-150"
-                >
-                  <FaLinkedinIn />
-                </motion.button>
+                {socials?.map((social) => (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: 1,
+                    }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                      delay: 0,
+                    }}
+                    className="    p-1 duration-300 hover:scale-150"
+                    style={{ backgroundColor: themeColor }}
+                    key={social._id}
+                  >
+                    <a
+                      href={social.url_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={`${import.meta.env.VITE_IMG_URL}/${social.image}`}
+                        alt=""
+                        className=" w-5  h-5 object-contain"
+                      />
+                    </a>
+                  </motion.div>
+                ))}
               </div>
             )}
           </motion.div>
