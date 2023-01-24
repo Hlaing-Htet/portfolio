@@ -13,7 +13,7 @@ import AdminPage from "./pages/AdminPage";
 import DashboradPage from "./pages/DashboradPage";
 import Home from "./components/dashboard/Home/Home";
 import About from "./components/dashboard/About/About";
-import Skills from "./components/dashboard/Skills/Skills";
+import Skills from "./components/dashboard/Skills/SkillsPage";
 import Projects from "./components/dashboard/Projects/Projects";
 import Contact from "./components/dashboard/Contact/Contact";
 import Themes from "./components/dashboard/Theme/Themes";

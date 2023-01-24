@@ -29,7 +29,7 @@ const Category = () => {
   return (
     <div className=" mb-5 text-dark_textcolor">
       <div className=" flex gap-5 items-center mb-2 ">
-        <h2 className=" text-xl font-medium">Socials</h2>
+        <h2 className=" text-xl font-medium">Categories</h2>
         <span
           onClick={() => setEdit(true)}
           className=" cursor-pointer hover:scale-110"
