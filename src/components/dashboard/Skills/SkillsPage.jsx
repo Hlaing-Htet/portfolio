@@ -1,16 +1,19 @@
 import React from "react";
-import { Title } from "../../Title";
+import { Title } from "../../share/Title";
 import { GetSkillsCat } from "../../../service/SkillsCat/GetSkillsCat";
+import { GetSkills } from "../../../service/Skills/GetSkills";
 import { motion } from "framer-motion";
 import Category from "./Category";
 import Skills from "./Skills";
 
 const SkillsPage = () => {
   const { skillsCats, loading } = GetSkillsCat();
-  if (loading) {
+  const { skills, loading: skillsLoading } = GetSkills();
+  if (loading && skillsLoading) {
     return <p>Loading</p>;
   }
-  console.log(skillsCats);
+  console.log("skillsCats", skillsCats);
+  console.log("skills", skills);
   return (
     <div>
       <header className=" bg-dark_background z-10  sticky top-0 pt-5">

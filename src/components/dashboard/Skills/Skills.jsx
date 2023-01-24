@@ -1,28 +1,47 @@
-import { SkillsCatDetail } from "./SkillsCatDetail";
 import React, { useState } from "react";
+import Select from "react-select";
 import { useForm } from "react-hook-form";
 import { FiEdit } from "react-icons/fi";
 import { ImCancelCircle } from "react-icons/im";
+import { useSkillsContext } from "../../../hooks/UseSkillsContext";
 import { useSkillsCatContext } from "../../../hooks/UseSkillsCatContext";
+
 const Skills = () => {
   const [edit, setEdit] = useState(false);
+  const [selectValue, setSelectValue] = useState({ skillsCat: "" });
+  const [selectLevel, setSelectLevel] = useState({ level: "" });
   const { register, handleSubmit, reset } = useForm();
-  const { skillsCats, dispatch } = useSkillsCatContext();
+  const { skills, dispatch } = useSkillsContext();
+  const { skillsCats } = useSkillsCatContext();
+  //select category id option
+  const options = skillsCats.map((skillsCat) => ({
+    value: skillsCat._id,
+    label: skillsCat.name,
+  }));
+  const levelOptions = [
+    { value: "basic", label: "basic" },
+    { value: "intermediate", label: "intermediate" },
+    { value: "experienced", label: "experienced" },
+  ];
   const onSubmit = async (data) => {
-    console.log(data);
+    const addData = { ...data, ...selectValue, ...selectLevel };
+    console.log(addData);
+    const formData = new FormData();
+    formData.append("file", addData.file[0]);
+    formData.append("name", addData.name);
+    formData.append("level", addData.level);
+    formData.append("skillsCat", addData.skillsCat);
+
     const response = await fetch(
-      `${import.meta.env.VITE_REACT_APP_DB_URL}/api/skillscat`,
+      `${import.meta.env.VITE_REACT_APP_DB_URL}/api/skills`,
       {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+        body: formData,
       }
     );
     const json = await response.json();
     if (response.ok) {
-      dispatch({ type: "ADD_SKILLSCAT", payload: json.result });
+      dispatch({ type: "ADD_SKILL", payload: json.result });
       reset();
     }
   };
@@ -51,12 +70,33 @@ const Skills = () => {
             onSubmit={handleSubmit(onSubmit)}
             className=" bg-dark_background p-5 justify-center items-center flex flex-col gap-5"
           >
+            <Select
+              className=" text-dark_background w-full"
+              options={options}
+              placeholder="select category"
+              onChange={(e) =>
+                setSelectValue({ ...selectValue, skillsCat: e.value })
+              }
+            />
+            <Select
+              className=" text-dark_background w-full"
+              options={levelOptions}
+              placeholder="select level"
+              onChange={(e) =>
+                setSelectLevel({ ...selectLevel, level: e.value })
+              }
+            />
+
+            <input
+              type="file"
+              {...register("file")}
+              className=" bg-dark_textcolor w-full text-dark_background p-3 cursor-pointer"
+            />
             <input
               type="text"
-              placeholder="Enter Category name"
-              required
               {...register("name")}
-              className=" bg-dark_textcolor w-full text-dark_background p-3 cursor-pointer"
+              className=" w-full p-3  bg-dark_textcolor text-dark_background "
+              placeholder="Enter Name"
             />
 
             <button
@@ -67,8 +107,8 @@ const Skills = () => {
             </button>
           </form>
         )}
-        {skillsCats?.map((skillcat) => (
-          <SkillsCatDetail key={skillcat._id} skill={skillcat} edit={edit} />
+        {skills?.map((skill) => (
+          <div key={skill._id}>abc</div>
         ))}
       </div>
     </div>

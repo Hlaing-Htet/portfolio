@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Title } from "../components/Title";
+import { Title } from "../components/share/Title";
 
 import { NavLink, Outlet } from "react-router-dom";
 import AppLayout from "../layouts/AppLayout";

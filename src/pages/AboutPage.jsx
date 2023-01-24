@@ -1,5 +1,5 @@
 import { ExperienceCard } from "../components/../components/ExperienceCard";
-import { Title } from "./../components/Title";
+import { Title } from "../components/share/Title";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Photo from "../assets/homeColor.png";
@@ -13,7 +13,7 @@ import { FaCode } from "react-icons/fa";
 import { FaServer } from "react-icons/fa";
 
 import { FaPhotoVideo } from "react-icons/fa";
-import { ContactBtn } from "../components/ContactBtn";
+import { ContactBtn } from "../components/share/ContactBtn";
 import AppLayout from "../layouts/AppLayout";
 
 const AboutPage = () => {

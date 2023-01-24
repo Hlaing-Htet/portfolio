@@ -4,7 +4,7 @@ import { HomeTypedTexts } from "./HomeTypedTexts";
 import { HomeEditTitleDesc } from "./HomeEditTitleDesc";
 
 import React from "react";
-import { Title } from "../../Title";
+import { Title } from "../../share/Title";
 import { motion } from "framer-motion";
 
 //services

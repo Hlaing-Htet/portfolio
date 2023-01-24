@@ -1,7 +1,7 @@
 import { TypedText } from "./../components/TypedText";
 import React, { useState } from "react";
 //components
-import { ContactBtn } from "./../components/ContactBtn";
+import { ContactBtn } from "../components/share/ContactBtn";
 
 import { motion, AnimatePresence } from "framer-motion";
 //icons
@@ -55,7 +55,7 @@ const HomePage = () => {
               alt=""
             />
             {isHover && (
-              <div className=" fixed top-1/2 -translate-y-1/2 right-6 flex flex-col gap-20">
+              <div className=" fixed top-0 h-screen right-6 justify-center items-center flex flex-col gap-20">
                 {socials?.map((social) => (
                   <motion.div
                     initial={{ opacity: 0 }}
