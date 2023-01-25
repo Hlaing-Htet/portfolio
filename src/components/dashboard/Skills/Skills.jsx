@@ -5,6 +5,7 @@ import { FiEdit } from "react-icons/fi";
 import { ImCancelCircle } from "react-icons/im";
 import { useSkillsContext } from "../../../hooks/UseSkillsContext";
 import { useSkillsCatContext } from "../../../hooks/UseSkillsCatContext";
+import SkillsDetail from "./SkillsDetail";
 
 const Skills = () => {
   const [edit, setEdit] = useState(false);
@@ -74,6 +75,7 @@ const Skills = () => {
               className=" text-dark_background w-full"
               options={options}
               placeholder="select category"
+              required
               onChange={(e) =>
                 setSelectValue({ ...selectValue, skillsCat: e.value })
               }
@@ -82,6 +84,7 @@ const Skills = () => {
               className=" text-dark_background w-full"
               options={levelOptions}
               placeholder="select level"
+              required
               onChange={(e) =>
                 setSelectLevel({ ...selectLevel, level: e.value })
               }
@@ -90,11 +93,13 @@ const Skills = () => {
             <input
               type="file"
               {...register("file")}
+              required
               className=" bg-dark_textcolor w-full text-dark_background p-3 cursor-pointer"
             />
             <input
               type="text"
               {...register("name")}
+              required
               className=" w-full p-3  bg-dark_textcolor text-dark_background "
               placeholder="Enter Name"
             />
@@ -108,7 +113,13 @@ const Skills = () => {
           </form>
         )}
         {skills?.map((skill) => (
-          <div key={skill._id}>abc</div>
+          <SkillsDetail
+            key={skill._id}
+            skill={skill}
+            edit={edit}
+            options={options}
+            levelOptions={levelOptions}
+          />
         ))}
       </div>
     </div>

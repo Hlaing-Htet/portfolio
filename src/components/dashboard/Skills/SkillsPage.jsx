@@ -15,8 +15,8 @@ const SkillsPage = () => {
   console.log("skillsCats", skillsCats);
   console.log("skills", skills);
   return (
-    <div>
-      <header className=" bg-dark_background z-10  sticky top-0 pt-5">
+    <div className="dark:text-dark_textcolor  h-screen overflow-auto">
+      <header className=" bg-dark_background z-10  sticky top-0 py-5">
         <Title name={"Skills Page"} />
       </header>
       <motion.main
