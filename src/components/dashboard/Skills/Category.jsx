@@ -67,8 +67,13 @@ const Category = () => {
             </button>
           </form>
         )}
-        {skillsCats?.map((skillcat) => (
-          <SkillsCatDetail key={skillcat._id} skill={skillcat} edit={edit} />
+        {skillsCats?.map((skillcat, index) => (
+          <SkillsCatDetail
+            index={index}
+            key={skillcat._id}
+            skill={skillcat}
+            edit={edit}
+          />
         ))}
       </div>
     </div>

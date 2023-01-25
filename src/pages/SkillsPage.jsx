@@ -25,21 +25,24 @@ const SkillsPage = () => {
           <div className=" bg-light_background dark:bg-dark_background z-10  sticky top-0 pt-5">
             <Title name={"Skills"} />
             <nav
-              className=" dark:bg-dark_background py-5 flex gap-5 overflow-auto justify-center"
+              className=" dark:bg-dark_background py-5 flex gap-5 overflow-auto justify-center border-b-2 border-primary"
               style={{ borderColor: themeColor }}
             >
               {skillsCats?.map((skillCat) => (
-                <NavLink
-                  to={`${skillCat.name}`}
-                  key={skillCat._id}
-                  className={({ isActive }) =>
-                    isActive
-                      ? " underline  font-bold text-light_textcolor block dark:text-dark_textcolor"
-                      : "  text-light_textcolor dark:text-dark_textcolor block "
-                  }
-                >
-                  {skillCat.name}
-                </NavLink>
+                <div key={skillCat._id}>
+                  {skillCat.show && (
+                    <NavLink
+                      to={`${skillCat.name}`}
+                      className={({ isActive }) =>
+                        isActive
+                          ? " underline  font-bold text-light_textcolor  dark:text-dark_textcolor"
+                          : "  text-light_textcolor dark:text-dark_textcolor  "
+                      }
+                    >
+                      {skillCat.name}
+                    </NavLink>
+                  )}
+                </div>
               ))}
             </nav>
           </div>

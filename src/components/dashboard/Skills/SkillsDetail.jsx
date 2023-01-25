@@ -69,7 +69,7 @@ const SkillsDetail = ({ skill, edit, options, levelOptions }) => {
         <figure className=" mb-5 flex justify-center">
           <img
             src={`${import.meta.env.VITE_IMG_URL}/${skill.image}`}
-            className="w-32 h-32 object-contain"
+            className=" h-20"
             alt=""
           />
         </figure>

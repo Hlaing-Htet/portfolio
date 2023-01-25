@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { PatchSkillsCat } from "../../../service/SkillsCat/PatchSkillsCat";
 import { DeleteSkillsCat } from "../../../service/SkillsCat/DeleteSkillsCat";
-export function SkillsCatDetail({ skill, edit }) {
+export function SkillsCatDetail({ skill, edit, index }) {
   const [singleEdit, setSingleEdit] = useState(false);
   const [isShow, setIsShow] = useState({ show: skill.show });
   const [changeName, setChangeName] = useState({ name: skill.name });
@@ -48,6 +48,7 @@ export function SkillsCatDetail({ skill, edit }) {
             type="checkbox"
             id={`${skill._id}`}
             name="show"
+            disabled={index === 0}
             checked={isShow.show}
             onChange={handleChange}
             className=""
