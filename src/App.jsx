@@ -18,7 +18,11 @@ import Projects from "./components/dashboard/Projects/Projects";
 import Contact from "./components/dashboard/Contact/Contact";
 import Themes from "./components/dashboard/Theme/Themes";
 
+import { useSkillsCatContext } from "./hooks/UseSkillsCatContext";
+
 const App = () => {
+  const { skillsCats } = useSkillsCatContext();
+
   return (
     <>
       <MusicPlayer />
@@ -28,7 +32,10 @@ const App = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/skills" element={<SkillsPage />}>
             <Route path=":name" element={<Tools />} />
-            <Route path="" element={<Navigate to={"/skills/frontend"} />} />
+            <Route
+              path=""
+              element={<Navigate to={`/skills/${skillsCats[0]?.name}`} />}
+            />
           </Route>
           <Route path="/projects" element={<ProjectsPage />}>
             <Route path=":name" element={<ProjectsByTitle />} />

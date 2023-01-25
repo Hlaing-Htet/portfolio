@@ -4,9 +4,14 @@ import { Title } from "../components/share/Title";
 
 import { NavLink, Outlet } from "react-router-dom";
 import AppLayout from "../layouts/AppLayout";
+import { GetSkillsCat } from "../service/SkillsCat/GetSkillsCat";
 
 const SkillsPage = () => {
   const themeColor = "#c9a227";
+  const { skillsCats, loading } = GetSkillsCat();
+  if (loading) {
+    return <p>loading</p>;
+  }
 
   return (
     <AnimatePresence>
@@ -20,49 +25,22 @@ const SkillsPage = () => {
           <div className=" bg-light_background dark:bg-dark_background z-10  sticky top-0 pt-5">
             <Title name={"Skills"} />
             <nav
-              className=" dark:bg-dark_background sticky top-32 flex z-10 gap-2 justify-center  md:gap-8  border-b-2 px-2 py-5"
+              className=" dark:bg-dark_background py-5 flex gap-5 overflow-auto justify-center"
               style={{ borderColor: themeColor }}
             >
-              <NavLink
-                to={`frontend`}
-                className={({ isActive }) =>
-                  isActive
-                    ? " underline  font-bold text-light_textcolor dark:text-dark_textcolor"
-                    : "  text-light_textcolor dark:text-dark_textcolor "
-                }
-              >
-                Front End
-              </NavLink>
-              <NavLink
-                to={"backend"}
-                className={({ isActive }) =>
-                  isActive
-                    ? " underline  font-bold text-light_textcolor dark:text-dark_textcolor"
-                    : "  text-light_textcolor dark:text-dark_textcolor "
-                }
-              >
-                Back End
-              </NavLink>
-              <NavLink
-                to={"design-tools"}
-                className={({ isActive }) =>
-                  isActive
-                    ? " underline  font-bold text-light_textcolor dark:text-dark_textcolor"
-                    : "  text-light_textcolor dark:text-dark_textcolor "
-                }
-              >
-                Design Tools
-              </NavLink>
-              <NavLink
-                to={"others-tools"}
-                className={({ isActive }) =>
-                  isActive
-                    ? " underline  font-bold text-light_textcolor dark:text-dark_textcolor"
-                    : "  text-light_textcolor dark:text-dark_textcolor "
-                }
-              >
-                Others
-              </NavLink>
+              {skillsCats?.map((skillCat) => (
+                <NavLink
+                  to={`${skillCat.name}`}
+                  key={skillCat._id}
+                  className={({ isActive }) =>
+                    isActive
+                      ? " underline  font-bold text-light_textcolor block dark:text-dark_textcolor"
+                      : "  text-light_textcolor dark:text-dark_textcolor block "
+                  }
+                >
+                  {skillCat.name}
+                </NavLink>
+              ))}
             </nav>
           </div>
           <Outlet />
