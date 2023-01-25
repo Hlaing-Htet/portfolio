@@ -1,4 +1,4 @@
-import { TypedText } from "./../components/TypedText";
+import { TypedText } from "../components/HomeComponents/TypedText";
 import React, { useState } from "react";
 //components
 import { ContactBtn } from "../components/share/ContactBtn";

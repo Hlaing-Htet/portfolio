@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import music from "../assets/music/downfall.mp3";
+import music from "../../assets/music/downfall.mp3";
 import ReactAudioPlayer from "react-audio-player";
 import { SiYoutubemusic } from "react-icons/si";
 import { motion } from "framer-motion";

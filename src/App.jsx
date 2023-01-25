@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import ProjectsByTitle from "./components/ProjectsByTitle";
-import { Tools } from "./components/Tools";
+import ProjectsByTitle from "./components/ProjectsComponents/ProjectsByTitle";
+import { Tools } from "./components/SkillsComponents/Tools";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import SkillsPage from "./pages/SkillsPage";
-import MusicPlayer from "./components/MusicPlayer";
+import MusicPlayer from "./components/share/MusicPlayer";
 import AdminPage from "./pages/AdminPage";
 import DashboradPage from "./pages/DashboradPage";
 import Home from "./components/dashboard/Home/Home";

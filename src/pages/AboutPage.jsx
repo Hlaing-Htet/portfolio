@@ -1,4 +1,4 @@
-import { ExperienceCard } from "../components/../components/ExperienceCard";
+import { ExperienceCard } from "../components/AboutComponents/ExperienceCard";
 import { Title } from "../components/share/Title";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
