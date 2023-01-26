@@ -3,10 +3,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Title } from "../components/share/Title";
 import { NavLink, Outlet } from "react-router-dom";
 import AppLayout from "../layouts/AppLayout";
+import { GetProjectsCat } from "../service/ProjectsCat/GetProjectsCat";
 
 const ProjectsPage = () => {
   const themeColor = "#c9a227";
-
+  const { projectsCats, loading } = GetProjectsCat();
+  if (loading) {
+    return <p>loading</p>;
+  }
   return (
     <AnimatePresence>
       <AppLayout>
@@ -23,26 +27,31 @@ const ProjectsPage = () => {
               style={{ borderColor: themeColor }}
             >
               <NavLink
-                to={"fullstack-app"}
+                to={`all`}
                 className={({ isActive }) =>
                   isActive
                     ? " underline  font-bold text-light_textcolor  dark:text-dark_textcolor"
                     : "  text-light_textcolor dark:text-dark_textcolor  "
                 }
               >
-                FullStack App
+                all
               </NavLink>
-
-              <NavLink
-                to={"mini-projects"}
-                className={({ isActive }) =>
-                  isActive
-                    ? " underline  font-bold text-light_textcolor  dark:text-dark_textcolor"
-                    : "  text-light_textcolor dark:text-dark_textcolor  "
-                }
-              >
-                Mini Projects
-              </NavLink>
+              {projectsCats?.map((projectsCat) => (
+                <div key={projectsCat._id}>
+                  {projectsCat.show && (
+                    <NavLink
+                      to={`${projectsCat.name}`}
+                      className={({ isActive }) =>
+                        isActive
+                          ? " underline  font-bold text-light_textcolor  dark:text-dark_textcolor"
+                          : "  text-light_textcolor dark:text-dark_textcolor  "
+                      }
+                    >
+                      {projectsCat.name}
+                    </NavLink>
+                  )}
+                </div>
+              ))}
             </nav>
           </div>
           <Outlet />

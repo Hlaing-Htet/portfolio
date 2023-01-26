@@ -20,6 +20,8 @@ import Themes from "./components/dashboard/Theme/Themes";
 
 import { useSkillsCatContext } from "./hooks/UseSkillsCatContext";
 
+import AllProjects from "./components/ProjectsComponents/AllProjects";
+
 const App = () => {
   const { skillsCats } = useSkillsCatContext();
 
@@ -39,10 +41,8 @@ const App = () => {
           </Route>
           <Route path="/projects" element={<ProjectsPage />}>
             <Route path=":name" element={<ProjectsByTitle />} />
-            <Route
-              path=""
-              element={<Navigate to={"/projects/fullstack-app"} />}
-            />
+            <Route path="all" element={<AllProjects />} />
+            <Route path="" element={<Navigate to={`/projects/all`} />} />
           </Route>
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/admin" element={<AdminPage />} />

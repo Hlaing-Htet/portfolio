@@ -1,11 +1,9 @@
 import React from "react";
-import image from "../../assets/master_note.png";
-import image1 from "../../assets/library.png";
-import image2 from "../../assets/library2.png";
+
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const ProjectDetail = ({ index = 0 }) => {
+const ProjectDetail = ({ index, project }) => {
   const [mouseEnter, setMouseEnter] = useState(false);
   const [mouseLeave, setMouseLeave] = useState(false);
 
@@ -41,14 +39,14 @@ const ProjectDetail = ({ index = 0 }) => {
           <div className=" flex gap-5">
             <a
               target="_blank"
-              href="https://google.com"
+              href={project?.demo_link}
               className=" p-3 w-20 text-center bg-dark_background hover:scale-110 duration-100"
             >
               Demo
             </a>
             <a
               target="_blank"
-              href="https://google.com"
+              href={project?.code_link}
               className=" p-3 w-20 text-center bg-dark_background hover:scale-110 duration-100"
             >
               Code
@@ -56,8 +54,12 @@ const ProjectDetail = ({ index = 0 }) => {
           </div>
         </motion.div>
       )}
-      <figure>
-        <img src={image} alt="" />
+      <figure className=" w-full">
+        <img
+          src={`${import.meta.env.VITE_IMG_URL}/${project?.image}`}
+          className="w-full"
+          alt=""
+        />
       </figure>
     </motion.div>
   );
