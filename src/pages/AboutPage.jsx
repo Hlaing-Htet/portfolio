@@ -23,7 +23,7 @@ const AboutPage = () => {
     <AnimatePresence>
       <AppLayout>
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0.6 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className=" flex-grow flex flex-col  bg-light_background dark:bg-dark_background overflow-hidden  h-screen"

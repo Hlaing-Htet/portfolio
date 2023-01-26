@@ -17,7 +17,7 @@ const SkillsPage = () => {
     <AnimatePresence>
       <AppLayout>
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0.6 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className=" dark:bg-dark_background h-screen flex-grow overflow-x-hidden"
@@ -25,7 +25,7 @@ const SkillsPage = () => {
           <div className=" bg-light_background dark:bg-dark_background z-10  sticky top-0 pt-5">
             <Title name={"Skills"} />
             <nav
-              className=" dark:bg-dark_background py-5 flex gap-5 overflow-auto justify-center border-b-2 border-primary"
+              className=" dark:bg-dark_background bg-light_background py-5 flex gap-5 overflow-auto justify-center border-b-2 border-primary"
               style={{ borderColor: themeColor }}
             >
               {skillsCats?.map((skillCat) => (

@@ -41,7 +41,7 @@ const App = () => {
             <Route path=":name" element={<ProjectsByTitle />} />
             <Route
               path=""
-              element={<Navigate to={"/projects/uiux-designs"} />}
+              element={<Navigate to={"/projects/fullstack-app"} />}
             />
           </Route>
           <Route path="/contact" element={<ContactPage />} />

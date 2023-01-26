@@ -5,50 +5,46 @@ import { NavLink, Outlet } from "react-router-dom";
 import AppLayout from "../layouts/AppLayout";
 
 const ProjectsPage = () => {
+  const themeColor = "#c9a227";
+
   return (
     <AnimatePresence>
       <AppLayout>
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0.6 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className=" flex-grow bg-darkbackground h-screen overflow-hidden"
+          className=" dark:bg-dark_background h-screen flex-grow overflow-x-hidden"
         >
-          <Title name={"Projects"} />
-          <nav className=" bg-darkbackground sticky top-32 flex z-10 justify-center gap-8 mb-5 border-b-2 border-primary">
-            <NavLink
-              to={`uiux-designs`}
-              className={({ isActive }) =>
-                isActive ? " text-primary p-3 font-bold" : " text-textcolor p-3"
-              }
+          <div className=" bg-light_background dark:bg-dark_background z-10  sticky top-0 pt-5">
+            <Title name={"Projects"} />
+            <nav
+              className=" dark:bg-dark_background bg-light_background py-5 flex gap-5 overflow-auto justify-center border-b-2 border-primary"
+              style={{ borderColor: themeColor }}
             >
-              UI/UX Designs
-            </NavLink>
-            <NavLink
-              to={"frontend-mentor"}
-              className={({ isActive }) =>
-                isActive ? " text-primary p-3 font-bold" : " text-textcolor p-3"
-              }
-            >
-              Frontend Mentor
-            </NavLink>
-            <NavLink
-              to={"mini-projects"}
-              className={({ isActive }) =>
-                isActive ? " text-primary p-3 font-bold" : " text-textcolor p-3"
-              }
-            >
-              Mini Projects
-            </NavLink>
-            <NavLink
-              to={"fullstack-app"}
-              className={({ isActive }) =>
-                isActive ? " text-primary p-3 font-bold" : " text-textcolor p-3"
-              }
-            >
-              FullStack App
-            </NavLink>
-          </nav>
+              <NavLink
+                to={"fullstack-app"}
+                className={({ isActive }) =>
+                  isActive
+                    ? " underline  font-bold text-light_textcolor  dark:text-dark_textcolor"
+                    : "  text-light_textcolor dark:text-dark_textcolor  "
+                }
+              >
+                FullStack App
+              </NavLink>
+
+              <NavLink
+                to={"mini-projects"}
+                className={({ isActive }) =>
+                  isActive
+                    ? " underline  font-bold text-light_textcolor  dark:text-dark_textcolor"
+                    : "  text-light_textcolor dark:text-dark_textcolor  "
+                }
+              >
+                Mini Projects
+              </NavLink>
+            </nav>
+          </div>
           <Outlet />
         </motion.div>
       </AppLayout>

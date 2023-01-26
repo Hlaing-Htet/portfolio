@@ -7,6 +7,7 @@ import { SiAboutdotme } from "react-icons/si";
 import { GiSkills } from "react-icons/gi";
 import { AiFillProject } from "react-icons/ai";
 import { AiFillContacts } from "react-icons/ai";
+import { BsPersonBoundingBox } from "react-icons/bs";
 const Navbar = () => {
   const themeColor = "#c9a227";
 
@@ -20,7 +21,7 @@ const Navbar = () => {
           <AiFillHome className=" w-full text-2xl" />
         </NavLinkStyle>
         <NavLinkStyle to={"/about"} text="ABOUT">
-          <SiAboutdotme className=" w-full text-2xl" />
+          <BsPersonBoundingBox className=" w-full text-2xl" />
         </NavLinkStyle>
         <NavLinkStyle to={"/skills"} text="SKILLS">
           <GiSkills className=" w-full text-2xl" />

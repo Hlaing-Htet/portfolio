@@ -27,7 +27,7 @@ const HomePage = () => {
     <AnimatePresence>
       <AppLayout>
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0.6 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className=" flex-grow overflow-hidden grid grid-cols-2 bg-light_background dark:bg-dark_background h-screen"
@@ -54,37 +54,40 @@ const HomePage = () => {
               className=" h-full object-contain  saturate-0 transition-all duration-300  hover:saturate-100"
               alt=""
             />
-            {isHover && (
-              <div className=" fixed top-0 h-screen right-6 justify-center items-center flex flex-col gap-20">
-                {socials?.map((social) => (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{
-                      opacity: 1,
-                    }}
-                    exit={{ opacity: 0 }}
-                    transition={{
-                      delay: 0,
-                    }}
-                    className="    p-1 duration-300 hover:scale-150"
-                    style={{ backgroundColor: themeColor }}
-                    key={social._id}
+
+            <div
+              className={`${
+                isHover ? "opacity-100" : "opacity-0"
+              } fixed top-0 h-screen right-6 transition-all duration-200 justify-center items-center flex flex-col gap-20`}
+            >
+              {socials?.map((social) => (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: 1,
+                  }}
+                  exit={{ opacity: 0 }}
+                  transition={{
+                    delay: 0,
+                  }}
+                  className="    p-1 duration-300 hover:scale-150"
+                  style={{ backgroundColor: themeColor }}
+                  key={social._id}
+                >
+                  <a
+                    href={social.url_link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <a
-                      href={social.url_link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img
-                        src={`${import.meta.env.VITE_IMG_URL}/${social.image}`}
-                        alt=""
-                        className=" w-5  h-5 object-contain"
-                      />
-                    </a>
-                  </motion.div>
-                ))}
-              </div>
-            )}
+                    <img
+                      src={`${import.meta.env.VITE_IMG_URL}/${social.image}`}
+                      alt=""
+                      className=" w-4  h-4 object-contain"
+                    />
+                  </a>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
           <motion.div
             initial={{ x: "100vw" }}

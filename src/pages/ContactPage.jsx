@@ -8,12 +8,14 @@ const ContactPage = () => {
     <AnimatePresence>
       <AppLayout>
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0.6 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className=" flex-grow bg-darkbackground h-screen overflow-hidden"
+          className=" dark:bg-dark_background h-screen flex-grow overflow-x-hidden"
         >
-          <Title name={"Contact"} />
+          <div className=" bg-light_background dark:bg-dark_background z-10  sticky top-0 pt-5">
+            <Title name={"Contact"} />
+          </div>
         </motion.div>
       </AppLayout>
     </AnimatePresence>
