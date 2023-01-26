@@ -8,7 +8,7 @@ export const GetSkillsCat = () => {
   useEffect(() => {
     const fetchSkillsCats = async () => {
       const response = await fetch(
-        `${import.meta.env.VITE_REACT_APP_DB_URL}/api/skillscat`,
+        `${import.meta.env.VITE_REACT_APP_DB_URL}/api/skillsCat`,
         {
           headers: {
             "Content-Type": "application/json",
