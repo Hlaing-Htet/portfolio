@@ -12,8 +12,7 @@ const SkillsPage = () => {
   if (loading && skillsLoading) {
     return <p>Loading</p>;
   }
-  console.log("skillsCats", skillsCats);
-  console.log("skills", skills);
+
   return (
     <div className="dark:text-dark_textcolor  h-screen overflow-auto">
       <header className=" bg-dark_background z-10  sticky top-0 py-5">
