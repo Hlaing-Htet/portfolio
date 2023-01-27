@@ -24,9 +24,16 @@ const ProjectsByTitle = () => {
   return (
     <div className=" text-dark_textcolor flex flex-wrap m-5 w-4/5 mx-auto">
       <Masonry breakpointCols={breakPoints} className="flex gap-5 ">
-        {projects?.map((project, index) => (
-          <ProjectDetail key={project._id} project={project} index={index} />
-        ))}
+        {projects?.map(
+          (project, index) =>
+            project?.show && (
+              <ProjectDetail
+                key={project._id}
+                project={project}
+                index={index}
+              />
+            )
+        )}
       </Masonry>
     </div>
   );

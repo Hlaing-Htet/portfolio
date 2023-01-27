@@ -14,6 +14,7 @@ const Skills = () => {
   const { register, handleSubmit, reset } = useForm();
   const { skills, dispatch } = useSkillsContext();
   const { skillsCats } = useSkillsCatContext();
+
   //select category id option
   const options = skillsCats.map((skillsCat) => ({
     value: skillsCat._id,
@@ -26,7 +27,7 @@ const Skills = () => {
   ];
   const onSubmit = async (data) => {
     const addData = { ...data, ...selectValue, ...selectLevel };
-    console.log(addData);
+
     const formData = new FormData();
     formData.append("file", addData.file[0]);
     formData.append("name", addData.name);

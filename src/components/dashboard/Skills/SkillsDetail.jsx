@@ -7,6 +7,8 @@ import { PatchSkills } from "../../../service/Skills/PatchSkills";
 import { useEffect } from "react";
 
 const SkillsDetail = ({ skill, edit, options, levelOptions }) => {
+  const [isShow, setIsShow] = useState({ show: skill.show });
+
   const [singleEdit, setSingleEdit] = useState(false);
   const [editName, setEditName] = useState({ name: skill.name });
   const [selectValue, setSelectValue] = useState({
@@ -30,6 +32,19 @@ const SkillsDetail = ({ skill, edit, options, levelOptions }) => {
     data: selectLevel,
     setEdit: setSingleEdit,
   });
+  const handleEditShow = PatchSkills({
+    id: skill._id,
+    data: isShow,
+  });
+  useEffect(() => {
+    if (skill.show !== isShow.show) {
+      handleEditShow();
+    }
+  }, [isShow.show]);
+  const handleChange = (e) => {
+    const { name, checked } = e.target;
+    setIsShow({ ...isShow, [name]: checked });
+  };
   /////////
   useEffect(() => {
     if (selectValue.skillsCat !== skill.skillsCat) {
@@ -66,6 +81,21 @@ const SkillsDetail = ({ skill, edit, options, levelOptions }) => {
   return (
     <div className=" bg-dark_background text-dark_textcolor">
       <div className=" p-5">
+        {edit && (
+          <div className="flex gap-5 justify-center mb-5 items-center">
+            <label htmlFor={`${skill._id}`} className=" cursor-pointer">
+              Show{" "}
+            </label>
+            <input
+              type="checkbox"
+              id={`${skill._id}`}
+              name="show"
+              checked={isShow.show}
+              onChange={handleChange}
+              className=""
+            />
+          </div>
+        )}
         <figure className=" mb-5 flex justify-center">
           <img
             src={`${import.meta.env.VITE_IMG_URL}/${skill.image}`}

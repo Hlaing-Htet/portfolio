@@ -11,13 +11,16 @@ export function Tools() {
   const { _id: id } = skillsCats.find((skillsCat) => skillsCat.name === name);
 
   const { skills, loading } = GetSkillsByCategory({ id });
-  console.log(skills);
+  if (loading) {
+    return <p>loading</p>;
+  }
   return (
     <div className="">
       <div className=" grid grid-cols-1  p-5 gap-5 md:grid-cols-4">
-        {skills?.map((skill, index) => (
-          <Skill key={skill._id} skill={skill} index={index} />
-        ))}
+        {skills?.map(
+          (skill, index) =>
+            skill.show && <Skill key={skill._id} skill={skill} index={index} />
+        )}
       </div>
     </div>
   );

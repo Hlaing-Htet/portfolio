@@ -28,10 +28,11 @@ const SkillsPage = () => {
               className=" dark:bg-dark_background bg-light_background py-5 flex gap-5 overflow-auto justify-center border-b-2 border-primary"
               style={{ borderColor: themeColor }}
             >
-              {skillsCats?.map((skillCat) => (
-                <div key={skillCat._id}>
-                  {skillCat.show && (
+              {skillsCats?.map(
+                (skillCat) =>
+                  skillCat.show && (
                     <NavLink
+                      key={skillCat._id}
                       to={`${skillCat.name}`}
                       className={({ isActive }) =>
                         isActive
@@ -41,9 +42,8 @@ const SkillsPage = () => {
                     >
                       {skillCat.name}
                     </NavLink>
-                  )}
-                </div>
-              ))}
+                  )
+              )}
             </nav>
           </div>
           <Outlet />

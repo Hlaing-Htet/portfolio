@@ -16,6 +16,7 @@ const Project = () => {
   const { register, handleSubmit, reset } = useForm();
   const { projects, dispatch } = useProjectsContext();
   const { projectsCats } = useProjectsCatContext();
+  console.log(projects);
   //select category id option
   const options = projectsCats.map((projectsCat) => ({
     value: projectsCat._id,

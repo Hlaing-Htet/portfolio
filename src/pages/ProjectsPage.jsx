@@ -36,10 +36,11 @@ const ProjectsPage = () => {
               >
                 all
               </NavLink>
-              {projectsCats?.map((projectsCat) => (
-                <div key={projectsCat._id}>
-                  {projectsCat.show && (
+              {projectsCats?.map(
+                (projectsCat) =>
+                  projectsCat.show && (
                     <NavLink
+                      key={projectsCat._id}
                       to={`${projectsCat.name}`}
                       className={({ isActive }) =>
                         isActive
@@ -49,9 +50,8 @@ const ProjectsPage = () => {
                     >
                       {projectsCat.name}
                     </NavLink>
-                  )}
-                </div>
-              ))}
+                  )
+              )}
             </nav>
           </div>
           <Outlet />

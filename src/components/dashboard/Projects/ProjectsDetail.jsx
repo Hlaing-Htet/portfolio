@@ -7,6 +7,8 @@ import { PatchProjects } from "../../../service/Projects/PatchProjects";
 import { useEffect } from "react";
 
 const ProjectsDetail = ({ project, edit, options }) => {
+  const [isShow, setIsShow] = useState({ show: project.show });
+
   const [singleEdit, setSingleEdit] = useState(false);
   const [editDemo, setEditDemo] = useState({ demo_link: project?.demo_link });
   const [editCode, setEditCode] = useState({ code_link: project?.code_link });
@@ -31,7 +33,19 @@ const ProjectsDetail = ({ project, edit, options }) => {
     data: selectValue,
     setEdit: setSingleEdit,
   });
-
+  const handleEditShow = PatchProjects({
+    id: project?._id,
+    data: isShow,
+  });
+  useEffect(() => {
+    if (project?.show !== isShow.show) {
+      handleEditShow();
+    }
+  }, [isShow.show]);
+  const handleChange = (e) => {
+    const { name, checked } = e.target;
+    setIsShow({ ...isShow, [name]: checked });
+  };
   /////////
   useEffect(() => {
     if (selectValue.projectsCat !== project?.projectsCat) {
@@ -64,6 +78,21 @@ const ProjectsDetail = ({ project, edit, options }) => {
   return (
     <div className=" bg-dark_background text-dark_textcolor">
       <div className=" p-5">
+        {edit && (
+          <div className="flex gap-5 justify-center mb-5 items-center">
+            <label htmlFor={`${project?._id}`} className=" cursor-pointer">
+              Show{" "}
+            </label>
+            <input
+              type="checkbox"
+              id={`${project?._id}`}
+              name="show"
+              checked={isShow.show}
+              onChange={handleChange}
+              className=""
+            />
+          </div>
+        )}
         <figure
           className=" h-48 mb-5 flex justify-center bg-cover bg-left-top "
           style={{
