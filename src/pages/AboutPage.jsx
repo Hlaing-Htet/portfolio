@@ -22,12 +22,7 @@ const AboutPage = () => {
   return (
     <AnimatePresence>
       <AppLayout>
-        <motion.div
-          initial={{ opacity: 0.6 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className=" flex-grow flex flex-col  bg-light_background dark:bg-dark_background overflow-hidden  h-screen"
-        >
+        <div className=" flex-grow flex flex-col  bg-light_background dark:bg-dark_background overflow-hidden  h-screen">
           <div className="  pt-5">
             <Title name={"About Me"} className="" />
           </div>
@@ -37,7 +32,12 @@ const AboutPage = () => {
                 x: "-100vw",
               }}
               animate={{ x: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{
+                delay: 0.2,
+                type: "spring",
+                damping: 25,
+                stiffness: 250,
+              }}
               className=" col-span-1"
             >
               <img src={Photo} className=" w-full" alt="" />
@@ -45,23 +45,26 @@ const AboutPage = () => {
             <motion.div
               initial={{ x: "100vw" }}
               animate={{ x: 0 }}
+              transition={{
+                delay: 0.2,
+                type: "spring",
+                damping: 25,
+                stiffness: 250,
+              }}
               className=" col-span-2  p-5  flex flex-col"
             >
-              <div className="  grid grid-cols-4 gap-5">
+              <div className="  grid grid-cols-3 gap-5">
                 <ExperienceCard name={"Services"} parag={"What I Offer ?"}>
                   <RiServiceFill className=" w-full text-3xl text-light_background dark:text-dark_background" />
                 </ExperienceCard>
-                <ExperienceCard name={"Experience"} parag={"3+ years Working"}>
+                <ExperienceCard name={"Education"} parag={"1+ year Learning"}>
                   <MdOutlineCastForEducation className=" w-full text-3xl text-light_background dark:text-dark_background" />
                 </ExperienceCard>
-                <ExperienceCard name={"Experience"} parag={"3+ years Working"}>
+                <ExperienceCard name={"Experience"} parag={" not Working"}>
                   <BsAwardFill className=" w-full text-3xl text-light_background dark:text-dark_background" />
                 </ExperienceCard>
-                <ExperienceCard name={"Experience"} parag={"3+ years Working"}>
-                  <AiFillProject className=" w-full text-3xl text-light_background dark:text-dark_background" />
-                </ExperienceCard>
               </div>
-              <div className=" flex-grow  flex flex-col justify-center">
+              <div className=" flex-grow flex flex-col  justify-center">
                 <h3 className=" text-light_textcolor dark:text-dark_textcolor font-semibold text-xl mt-5">
                   What I do ?
                 </h3>
@@ -111,11 +114,11 @@ const AboutPage = () => {
                     </span>
                   </div>
                 </div>
+                <ContactBtn />
               </div>
-              <ContactBtn />
             </motion.div>
           </div>
-        </motion.div>
+        </div>
       </AppLayout>
     </AnimatePresence>
   );

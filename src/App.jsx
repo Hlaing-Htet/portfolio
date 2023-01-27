@@ -17,13 +17,15 @@ import Skills from "./components/dashboard/Skills/SkillsPage";
 import Projects from "./components/dashboard/Projects/ProjectsPage";
 import Contact from "./components/dashboard/Contact/Contact";
 import Themes from "./components/dashboard/Theme/Themes";
-
-import { useSkillsCatContext } from "./hooks/UseSkillsCatContext";
+import { GetSkillsCat } from "./service/SkillsCat/GetSkillsCat";
 
 import AllProjects from "./components/ProjectsComponents/AllProjects";
 
 const App = () => {
-  const { skillsCats } = useSkillsCatContext();
+  const { skillsCats, loading } = GetSkillsCat();
+  if (loading) {
+    return null;
+  }
 
   return (
     <>

@@ -13,6 +13,9 @@ export function ExperienceCard({ children, name, parag }) {
       }}
       transition={{
         delay: 0.2,
+        type: "spring",
+        damping: 25,
+        stiffness: 250,
       }}
       className=" p-3  col-span-1 flex flex-col justify-center items-center  shadow-lg"
       style={{ backgroundColor: themeColor }}

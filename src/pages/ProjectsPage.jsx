@@ -8,18 +8,11 @@ import { GetProjectsCat } from "../service/ProjectsCat/GetProjectsCat";
 const ProjectsPage = () => {
   const themeColor = "#c9a227";
   const { projectsCats, loading } = GetProjectsCat();
-  if (loading) {
-    return <p>loading</p>;
-  }
+
   return (
     <AnimatePresence>
       <AppLayout>
-        <motion.div
-          initial={{ opacity: 0.6 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className=" dark:bg-dark_background h-screen flex-grow overflow-x-hidden"
-        >
+        <div className=" dark:bg-dark_background h-screen flex-grow overflow-x-hidden">
           <div className=" bg-light_background dark:bg-dark_background z-10  sticky top-0 pt-5">
             <Title name={"Projects"} />
             <nav
@@ -36,26 +29,30 @@ const ProjectsPage = () => {
               >
                 all
               </NavLink>
-              {projectsCats?.map(
-                (projectsCat) =>
-                  projectsCat.show && (
-                    <NavLink
-                      key={projectsCat._id}
-                      to={`${projectsCat.name}`}
-                      className={({ isActive }) =>
-                        isActive
-                          ? " underline  font-bold text-light_textcolor  dark:text-dark_textcolor"
-                          : "  text-light_textcolor dark:text-dark_textcolor  "
-                      }
-                    >
-                      {projectsCat.name}
-                    </NavLink>
-                  )
+              {loading ? (
+                <div>hi</div>
+              ) : (
+                projectsCats?.map(
+                  (projectsCat) =>
+                    projectsCat.show && (
+                      <NavLink
+                        key={projectsCat._id}
+                        to={`${projectsCat.name}`}
+                        className={({ isActive }) =>
+                          isActive
+                            ? " underline  font-bold text-light_textcolor  dark:text-dark_textcolor"
+                            : "  text-light_textcolor dark:text-dark_textcolor  "
+                        }
+                      >
+                        {projectsCat.name}
+                      </NavLink>
+                    )
+                )
               )}
             </nav>
           </div>
           <Outlet />
-        </motion.div>
+        </div>
       </AppLayout>
     </AnimatePresence>
   );
