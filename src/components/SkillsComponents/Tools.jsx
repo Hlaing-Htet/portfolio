@@ -16,7 +16,7 @@ export function Tools() {
   }
   return (
     <div className="">
-      <div className=" grid grid-cols-1  p-5 gap-5 md:grid-cols-4">
+      <div className=" grid  p-3 md:p-5 gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {skills?.map(
           (skill, index) =>
             skill.show && <Skill key={skill._id} skill={skill} index={index} />

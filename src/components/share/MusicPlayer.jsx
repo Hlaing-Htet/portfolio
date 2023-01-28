@@ -34,7 +34,7 @@ const MusicPlayer = () => {
 
   return (
     <>
-      <div className=" fixed top-1/2 -translate-y-1/2 right-3 z-10">
+      <div className=" fixed top-1/2 -translate-y-1/2 right-3 z-20">
         <motion.button
           animate={
             click
@@ -54,7 +54,7 @@ const MusicPlayer = () => {
           }
         >
           <SiYoutubemusic
-            className=" text-5xl "
+            className=" text-5xl bg-light_background_soft dark:bg-dark_background_soft rounded-full shadow-xl "
             style={{ color: themeColor }}
           />
         </motion.button>

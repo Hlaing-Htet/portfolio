@@ -13,7 +13,7 @@ const AllProjects = () => {
     return <p>loading</p>;
   }
   return (
-    <div className=" text-light_textcolor dark:text-dark_textcolor flex flex-wrap p-5 container mx-auto">
+    <div className=" text-light_textcolor dark:text-dark_textcolor flex flex-wrap p-3 md:p-5 container mx-auto">
       <Masonry breakpointCols={breakPoints} className="flex gap-5 ">
         {projects?.map(
           (project, index) =>

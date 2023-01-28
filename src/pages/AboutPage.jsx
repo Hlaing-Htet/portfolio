@@ -22,11 +22,11 @@ const AboutPage = () => {
   return (
     <AnimatePresence>
       <AppLayout>
-        <div className=" flex-grow flex flex-col  bg-light_background dark:bg-dark_background overflow-hidden  h-screen">
-          <div className="  pt-5">
+        <div className=" flex-grow flex flex-col  bg-light_background dark:bg-dark_background overflow-x-hidden  h-screen">
+          <div className=" bg-light_background dark:bg-dark_background z-10  sticky top-0 py-5">
             <Title name={"About Me"} className="" />
           </div>
-          <div className=" my-auto  grid grid-cols-3">
+          <div className=" my-auto  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             <motion.div
               initial={{
                 x: "-100vw",
@@ -38,9 +38,13 @@ const AboutPage = () => {
                 damping: 25,
                 stiffness: 250,
               }}
-              className=" col-span-1"
+              className=" col-span-1 flex justify-center"
             >
-              <img src={Photo} className=" w-full" alt="" />
+              <img
+                src={Photo}
+                className=" h-full object-contain w-2/3 md:w-full"
+                alt=""
+              />
             </motion.div>
             <motion.div
               initial={{ x: "100vw" }}
@@ -51,9 +55,9 @@ const AboutPage = () => {
                 damping: 25,
                 stiffness: 250,
               }}
-              className=" col-span-2  p-5  flex flex-col"
+              className=" col-span-1 md:col-span-2  p-5  flex flex-col"
             >
-              <div className="  grid grid-cols-3 gap-5">
+              <div className="   flex md:grid md:grid-cols-3  overflow-auto md:overflow-hidden  gap-5">
                 <ExperienceCard name={"Services"} parag={"What I Offer ?"}>
                   <RiServiceFill className=" w-full text-3xl text-light_background dark:text-dark_background" />
                 </ExperienceCard>
@@ -68,7 +72,7 @@ const AboutPage = () => {
                 <h3 className=" text-light_textcolor dark:text-dark_textcolor font-semibold text-xl mt-5">
                   What I do ?
                 </h3>
-                <div className=" grid grid-cols-2 gap-5 my-10">
+                <div className=" grid md:grid-cols-2  gap-5 my-10">
                   <div className=" flex items-center gap-5">
                     <span>
                       <MdOutlineDraw
