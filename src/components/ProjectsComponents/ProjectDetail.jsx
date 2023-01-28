@@ -17,7 +17,7 @@ const ProjectDetail = ({ index, project }) => {
         damping: 25,
         stiffness: 250,
       }}
-      className="mb-5 relative overflow-hidden"
+      className="mb-5 shadow-lg relative overflow-hidden"
       onMouseEnter={() => {
         setMouseEnter(true);
         setMouseLeave(false);
@@ -34,20 +34,20 @@ const ProjectDetail = ({ index, project }) => {
           transition={{
             type: "tween",
           }}
-          className=" absolute w-full h-full flex justify-center items-center bg-dark_background_soft bg-opacity-50"
+          className=" absolute w-full h-full flex justify-center items-center bg-light_background_soft dark:bg-dark_background_soft bg-opacity-50 dark:bg-opacity-50"
         >
           <div className=" flex gap-5">
             <a
               target="_blank"
               href={project?.demo_link}
-              className=" p-3 w-20 text-center bg-dark_background hover:scale-110 duration-100"
+              className=" p-3 w-20 text-center bg-light_background dark:bg-dark_background hover:scale-110 duration-100"
             >
               Demo
             </a>
             <a
               target="_blank"
               href={project?.code_link}
-              className=" p-3 w-20 text-center bg-dark_background hover:scale-110 duration-100"
+              className=" p-3 w-20 text-center bg-light_background dark:bg-dark_background hover:scale-110 duration-100"
             >
               Code
             </a>

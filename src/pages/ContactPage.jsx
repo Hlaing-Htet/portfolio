@@ -38,7 +38,7 @@ const ContactPage = () => {
             <Title name={"Contact"} />
           </header>
           <main className=" flex-grow flex justify-center items-center p-5">
-            <div className=" container mx-auto pb-5  grid grid-cols-3 gap-5 dark:text-dark_textcolor">
+            <div className=" container mx-auto pb-5  grid grid-cols-3 gap-5 text-light_textcolor dark:text-dark_textcolor">
               <div className=" col-span-1 gap-5  flex flex-col ">
                 <motion.article
                   initial={{ x: "-100vw" }}
@@ -49,7 +49,7 @@ const ContactPage = () => {
                     damping: 25,
                     stiffness: 250,
                   }}
-                  className=" p-5 flex flex-col items-center gap-2 font-medium bg-dark_background_soft  duration-100 "
+                  className=" p-5 flex flex-col items-center gap-2 font-medium bg-light_background_soft dark:bg-dark_background_soft  duration-100 "
                 >
                   <MdOutlineEmail
                     className=" text-5xl"
@@ -75,7 +75,7 @@ const ContactPage = () => {
                     damping: 25,
                     stiffness: 250,
                   }}
-                  className=" bg-dark_background_soft p-5 flex flex-col items-center gap-2  duration-100  font-medium"
+                  className=" bg-light_background_soft dark:bg-dark_background_soft p-5 flex flex-col items-center gap-2  duration-100  font-medium"
                 >
                   <RiMessengerLine
                     className=" text-5xl"
@@ -102,7 +102,7 @@ const ContactPage = () => {
                     damping: 25,
                     stiffness: 250,
                   }}
-                  className=" bg-dark_background_soft p-5 flex flex-col items-center  duration-100 gap-2 font-medium"
+                  className=" bg-light_background_soft dark:bg-dark_background_soft p-5 flex flex-col items-center  duration-100 gap-2 font-medium"
                 >
                   <AiOutlinePhone
                     className=" text-5xl"
@@ -138,7 +138,7 @@ const ContactPage = () => {
                     name="name"
                     placeholder="Your Full Name"
                     required
-                    className=" p-3 focus:outline-none focus:bg-dark_textcolor focus:text-dark_background  bg-dark_background_soft"
+                    className=" p-3 focus:outline-none focus:bg-light_textcolor focus:text-light_background dark:focus:bg-dark_textcolor dark:focus:text-dark_background  bg-light_background_soft dark:bg-dark_background_soft"
                   />
                   <motion.input
                     initial={{ x: "100vw" }}
@@ -152,7 +152,7 @@ const ContactPage = () => {
                     type="email"
                     name="email"
                     placeholder="Your Email"
-                    className=" p-3 focus:outline-none focus:bg-dark_textcolor focus:text-dark_background bg-dark_background_soft"
+                    className=" p-3 focus:outline-none focus:bg-light_textcolor focus:text-light_background dark:focus:bg-dark_textcolor dark:focus:text-dark_background bg-light_background_soft dark:bg-dark_background_soft"
                     required
                   />
                   <motion.textarea
@@ -167,7 +167,7 @@ const ContactPage = () => {
                     name="message"
                     rows="10"
                     placeholder="Your Message"
-                    className=" p-3 focus:outline-none focus:bg-dark_textcolor focus:text-dark_background  bg-dark_background_soft"
+                    className=" p-3 focus:outline-none focus:bg-light_textcolor focus:text-light_background dark:focus:bg-dark_textcolor dark:focus:text-dark_background  bg-light_background_soft dark:bg-dark_background_soft"
                     required
                   ></motion.textarea>
                   <motion.button

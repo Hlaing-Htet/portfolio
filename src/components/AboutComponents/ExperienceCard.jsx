@@ -17,7 +17,7 @@ export function ExperienceCard({ children, name, parag }) {
         damping: 25,
         stiffness: 250,
       }}
-      className=" p-3  col-span-1 flex flex-col justify-center items-center  shadow-lg"
+      className=" p-3  col-span-1 flex flex-col justify-center items-center  drop-shadow-xl"
       style={{ backgroundColor: themeColor }}
     >
       {children}

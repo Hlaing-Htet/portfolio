@@ -22,7 +22,7 @@ const ProjectsByTitle = () => {
   }
 
   return (
-    <div className=" text-dark_textcolor flex p-5 flex-wrap  container mx-auto">
+    <div className=" text-light_textcolor dark:text-dark_textcolor flex p-5 flex-wrap  container mx-auto">
       <Masonry breakpointCols={breakPoints} className="flex gap-5 ">
         {projects?.map(
           (project, index) =>
