@@ -16,7 +16,7 @@ import About from "./components/dashboard/About/About";
 import Skills from "./components/dashboard/Skills/SkillsPage";
 import Projects from "./components/dashboard/Projects/ProjectsPage";
 import Contact from "./components/dashboard/Contact/Contact";
-import Themes from "./components/dashboard/Theme/Themes";
+
 import { GetSkillsCat } from "./service/SkillsCat/GetSkillsCat";
 
 import AllProjects from "./components/ProjectsComponents/AllProjects";
@@ -26,6 +26,7 @@ const App = () => {
   if (loading) {
     return null;
   }
+  console.log(skillsCats);
 
   return (
     <>
@@ -54,7 +55,7 @@ const App = () => {
             <Route path="skills" element={<Skills />} />
             <Route path="projects" element={<Projects />} />
             <Route path="contact" element={<Contact />} />
-            <Route path="themes" element={<Themes />} />
+
             <Route
               path=""
               element={<Navigate to={"/admin/dashboard/home"} />}

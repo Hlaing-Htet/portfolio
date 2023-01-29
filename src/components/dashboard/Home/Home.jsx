@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 //services
 import { GetSocials } from "../../../service/Socials/GetSocials";
 import { GetHomeData } from "../../../service/HomeData/GetHomeData";
+import { Theme } from "./Theme";
 const Home = () => {
   const { socials, loading: socialsLoading } = GetSocials();
   const { homeDatas, loading } = GetHomeData();
@@ -18,6 +19,7 @@ const Home = () => {
   }
 
   const data = homeDatas;
+  console.log(homeDatas);
 
   return (
     <div className="dark:text-dark_textcolor  h-screen overflow-auto">
@@ -39,11 +41,20 @@ const Home = () => {
         }}
         className=" m-5  "
       >
-        <HomePhoto data={data} />
-        <HomeEditTitleDesc data={data} val="work_title" />
-        <HomeEditTitleDesc data={data} val="desc" />
-        <HomeTypedTexts data={data} />
-        <HomeSocial />
+        {homeDatas ? (
+          <>
+            <HomePhoto data={data} />
+            <HomeEditTitleDesc data={data} val="work_title" />
+            <HomeEditTitleDesc data={data} val="desc" />
+            <HomeTypedTexts data={data} />
+            <HomeSocial />
+            <Theme />
+          </>
+        ) : (
+          <div>
+            <h1>hi</h1>
+          </div>
+        )}
       </motion.main>
     </div>
   );

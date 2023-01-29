@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
-import Photo from "../assets/homeColor.png";
 
 const DashboradPage = () => {
   const themeColor = "#c9a227";
@@ -75,18 +74,6 @@ const DashboradPage = () => {
               }
             >
               Contact
-            </NavLink>
-          </li>
-          <li className=" bg-dark_background mb-2   text-center w-4/5 mx-auto">
-            <NavLink
-              to={"themes"}
-              className={({ isActive }) =>
-                isActive
-                  ? " bg-dark_textcolor block p-2 "
-                  : " text-dark_textcolor p-2 block"
-              }
-            >
-              Themes
             </NavLink>
           </li>
         </ul>

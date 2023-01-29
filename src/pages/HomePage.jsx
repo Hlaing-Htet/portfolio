@@ -12,6 +12,23 @@ import { Link } from "react-router-dom";
 //service
 import { GetHomeData } from "../service/HomeData/GetHomeData";
 import { GetSocials } from "../service/Socials/GetSocials";
+//
+import ContentLoader from "react-content-loader";
+import Image from "../assets/homeColor.png";
+
+const MyLoader = () => (
+  <ContentLoader
+    viewBox="0 0 500 500"
+    height={500}
+    width={500}
+    speed={1}
+    backgroundColor={"#333"}
+    foregroundColor={"#999"}
+  >
+    <path d="M484.52,64.61H15.65C7.1,64.61.17,71.2.17,79.31V299.82c0,8.12,6.93,14.7,15.48,14.7H484.52c8.55,0,15.48-6.58,15.48-14.7V79.31C500,71.2,493.07,64.61,484.52,64.61Zm-9,204.34c0,11.84-7.14,21.44-15.94,21.44H436.39L359.16,171.52c-7.1-10.92-19.67-11.16-27-.51L258.64,277.94C253.78,285,245.73,286,240,280.2l-79.75-80.62c-6-6.06-14.33-5.7-20,.88L62.34,290.39H40.63c-8.8,0-15.94-9.6-15.94-21.44V110.19c0-11.84,7.14-21.44,15.94-21.44H459.54c8.8,0,15.94,9.6,15.94,21.44Z" />
+    <ellipse cx="120" cy="140" rx="28" ry="28" />
+  </ContentLoader>
+);
 
 const HomePage = () => {
   const themeColor = "#c9a227";
@@ -52,8 +69,8 @@ const HomePage = () => {
               <GoPlus className=" text-8xl  " style={{ color: themeColor }} />
             </motion.div>
             {loading ? (
-              <div>hi</div>
-            ) : (
+              <MyLoader />
+            ) : data ? (
               <motion.img
                 animate={{
                   x: [0, 5, -5, 0],
@@ -65,6 +82,21 @@ const HomePage = () => {
                   repeat: Infinity,
                 }}
                 src={`${import.meta.env.VITE_IMG_URL}/${data?.image}`}
+                className=" w-2/3 md:w-full  max-h-screen object-contain  saturate-0 transition-all duration-300  hover:saturate-100"
+                alt=""
+              />
+            ) : (
+              <motion.img
+                animate={{
+                  x: [0, 5, -5, 0],
+                  rotate: [0, 1, -1, 0],
+                }}
+                transition={{
+                  ease: "linear",
+                  duration: 5,
+                  repeat: Infinity,
+                }}
+                src={Image}
                 className=" w-2/3 md:w-full  max-h-screen object-contain  saturate-0 transition-all duration-300  hover:saturate-100"
                 alt=""
               />
@@ -173,11 +205,11 @@ const HomePage = () => {
                   style={{ backgroundColor: themeColor }}
                 >
                   <p className=" text-base sm:text-lg md:text-xl text-light_textcolor font-medium text-center md:text-start">
-                    {data?.work_title}
+                    {data ? data?.work_title : "Work Title"}
                   </p>
                 </div>
                 <p className=" sm:mb-16 dark:text-dark_textcolor opacity-60 text-light_textcolor text-center sm:text-start  sm:w-2/3">
-                  {data?.desc}
+                  {data ? data?.desc : "Description ....."}
                 </p>
                 <div className=" flex justify-center md:justify-start">
                   <ContactBtn />
