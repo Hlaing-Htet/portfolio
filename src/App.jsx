@@ -26,7 +26,6 @@ const App = () => {
   if (loading) {
     return null;
   }
-  console.log(skillsCats);
 
   return (
     <>

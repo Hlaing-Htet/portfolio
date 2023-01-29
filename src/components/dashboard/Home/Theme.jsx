@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import { FiEdit } from "react-icons/fi";
 import { ImCancelCircle } from "react-icons/im";
 import { PatchHomeData } from "../../../service/HomeData/PatchHomeData";
+import { PhotoshopPicker } from "react-color";
+import { motion } from "framer-motion";
 export function Theme({ data, val }) {
+  const [themeColor, setThemeColor] = useState(data?.color);
   const [edit, setEdit] = useState(false);
-  const [value, setValue] = useState(data?.color);
-  const updateData = {
-    [val]: value,
-  };
 
   const handleEdit = PatchHomeData({
     id: data?._id,
-    data: updateData,
+    data: { color: themeColor },
     setEdit,
   });
 
@@ -34,26 +33,45 @@ export function Theme({ data, val }) {
           </span>
         )}
       </div>
-      <div className=" bg-dark_background_soft p-5">
-        {edit ? (
-          <form
-            onSubmit={(e) => handleEdit(e)}
-            className=" justify-center  flex flex-col gap-5"
-          >
-            <input
-              type="text"
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
-              autoFocus={edit}
-              className=" p-3 text-dark_background bg-dark_textcolor"
-            />
-            <button className=" bg-dark_textcolor text-dark_background px-3 p-1 w-fit">
-              edit
-            </button>
-          </form>
-        ) : (
-          <p className="opacity-80">{data?.[val]}</p>
+      <div
+        className=" bg-dark_background_soft p-5 flex items-center
+       gap-10"
+      >
+        {edit && (
+          <PhotoshopPicker
+            className=" text-dark_background"
+            color={themeColor}
+            onChangeComplete={(color) => setThemeColor(color.hex)}
+          />
         )}
+        <div
+          className={` flex-grow ${
+            edit && "flex flex-col gap-5 items-center justify-center"
+          } `}
+        >
+          <div className=" relative h-12 w-44">
+            <span
+              className=" h-full w-full block"
+              style={{ backgroundColor: `${themeColor}` }}
+            ></span>
+            <motion.div
+              animate={{
+                mixBlendMode: "difference",
+              }}
+              className=" absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+            >
+              {themeColor}
+            </motion.div>
+          </div>
+          {edit && (
+            <button
+              onClick={handleEdit}
+              className=" p-3 bg-dark_textcolor text-dark_background"
+            >
+              Change Color
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

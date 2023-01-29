@@ -10,16 +10,17 @@ import { motion } from "framer-motion";
 //services
 import { GetSocials } from "../../../service/Socials/GetSocials";
 import { GetHomeData } from "../../../service/HomeData/GetHomeData";
+import { PostHomeData } from "../../../service/HomeData/PostHomeData";
 import { Theme } from "./Theme";
 const Home = () => {
   const { socials, loading: socialsLoading } = GetSocials();
+  const onSubmit = PostHomeData({});
   const { homeDatas, loading } = GetHomeData();
   if (loading && socialsLoading) {
     return <p>Loading</p>;
   }
 
   const data = homeDatas;
-  console.log(homeDatas);
 
   return (
     <div className="dark:text-dark_textcolor  h-screen overflow-auto">
@@ -48,11 +49,16 @@ const Home = () => {
             <HomeEditTitleDesc data={data} val="desc" />
             <HomeTypedTexts data={data} />
             <HomeSocial />
-            <Theme />
+            <Theme data={data} />
           </>
         ) : (
-          <div>
-            <h1>hi</h1>
+          <div className=" h-96 flex items-center justify-center">
+            <button
+              onClick={onSubmit}
+              className=" bg-dark_textcolor text-dark_background p-4 font-semibold"
+            >
+              Start Home
+            </button>
           </div>
         )}
       </motion.main>

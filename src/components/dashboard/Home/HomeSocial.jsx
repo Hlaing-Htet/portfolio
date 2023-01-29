@@ -73,9 +73,13 @@ export function HomeSocial({}) {
             </button>
           </form>
         )}
-        {socials?.map((social) => (
-          <HomeSocialDetail key={social._id} social={social} edit={edit} />
-        ))}
+        {socials.length !== 0 ? (
+          socials?.map((social) => (
+            <HomeSocialDetail key={social._id} social={social} edit={edit} />
+          ))
+        ) : (
+          <div>no social is added</div>
+        )}
       </div>
     </div>
   );

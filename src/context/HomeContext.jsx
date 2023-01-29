@@ -8,7 +8,10 @@ export const homeContextReducer = (state, action) => {
       return {
         homeDatas: action.payload[0],
       };
-
+    case "ADD_HOMEDATA":
+      return {
+        homeDatas: { ...state.homeDatas, ...action.payload },
+      };
     case "UPDATE_HOMEDATA":
       return {
         homeDatas:

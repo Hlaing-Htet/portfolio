@@ -49,11 +49,13 @@ export function HomePhoto({ data }) {
       </div>
       <div className=" bg-dark_background_soft p-5 grid grid-cols-4">
         <figure className=" bg-dark_background">
-          <img
-            src={`${import.meta.env.VITE_IMG_URL}/${data?.image}`}
-            className=" block mx-auto"
-            alt=""
-          />
+          {data.image && (
+            <img
+              src={`${import.meta.env.VITE_IMG_URL}/${data?.image}`}
+              className=" block mx-auto"
+              alt=""
+            />
+          )}
         </figure>
         <form
           onSubmit={handleSubmit(onSubmit)}

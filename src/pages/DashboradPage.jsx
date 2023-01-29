@@ -2,16 +2,11 @@ import React from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 
 const DashboradPage = () => {
-  const themeColor = "#c9a227";
-
   return (
     <div className=" grid grid-cols-5">
       <div className=" col-span-1  h-screen dark:bg-dark_background_soft">
         <Link to={"/"}>
-          <h1
-            className=" text-2xl font-bold text-center m-5 underline"
-            style={{ color: themeColor }}
-          >
+          <h1 className=" text-dark_textcolor text-2xl font-bold text-center m-5 underline">
             DashBoard
           </h1>
         </Link>
