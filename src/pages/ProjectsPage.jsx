@@ -4,9 +4,9 @@ import { Title } from "../components/share/Title";
 import { NavLink, Outlet } from "react-router-dom";
 import AppLayout from "../layouts/AppLayout";
 import { GetProjectsCat } from "../service/ProjectsCat/GetProjectsCat";
-
+import { UseColor } from "../hooks/UseColor";
 const ProjectsPage = () => {
-  const themeColor = "#c9a227";
+  const themeColor = UseColor();
   const { projectsCats, loading } = GetProjectsCat();
 
   return (

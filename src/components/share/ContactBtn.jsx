@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { UseColor } from "../../hooks/UseColor";
 export function ContactBtn() {
-  const themeColor = "#c9a227";
+  const themeColor = UseColor();
 
   return (
     <Link to={"/contact"}>

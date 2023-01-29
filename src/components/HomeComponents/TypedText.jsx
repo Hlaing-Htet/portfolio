@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
-
+import { UseColor } from "../../hooks/UseColor";
 export function TypedText({ text }) {
-  const themeColor = "#c9a227";
+  const themeColor = UseColor();
 
   const el = useRef(null);
   const typed = useRef(null);

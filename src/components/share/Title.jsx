@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 export function Title({ name }) {
-  const themeColor = "#c9a227";
-
   return (
     <div className=" ">
       <motion.h1

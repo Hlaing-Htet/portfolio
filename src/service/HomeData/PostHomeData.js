@@ -12,8 +12,14 @@ export const PostHomeData = ({ data = {} }) => {
     );
     const json = await response.json();
     if (response.ok) {
-      console.log(json);
-      dispatch({ type: "ADD_HOMEDATA", payload: json.result });
+      console.log(json.result);
+      if (json.result.length > 0) {
+        localStorage.setItem(
+          "color",
+          JSON.stringify(json?.result[0]?._doc.color)
+        );
+      }
+      dispatch({ type: "ADD_HOMEDATA", payload: json.result[0]?._doc });
     }
   };
   return onSubmit;

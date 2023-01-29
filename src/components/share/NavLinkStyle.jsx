@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+import { UseColor } from "../../hooks/UseColor";
 export function NavLinkStyle({ to, children, text }) {
   const [whileHover, setWhileHover] = useState(false);
-  const themeColor = "#c9a227";
+  const themeColor = UseColor();
 
   return (
     <NavLink

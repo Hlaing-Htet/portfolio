@@ -13,6 +13,9 @@ export const homeContextReducer = (state, action) => {
         homeDatas: { ...state.homeDatas, ...action.payload },
       };
     case "UPDATE_HOMEDATA":
+      localStorage.setItem("color", JSON.stringify(action.payload.color));
+      // console.log(action.payload.color);
+
       return {
         homeDatas:
           state.homeDatas._id === action.payload._id

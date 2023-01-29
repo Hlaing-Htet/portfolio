@@ -31,12 +31,13 @@ const MyLoader = () => (
 );
 
 const HomePage = () => {
-  const themeColor = "#c9a227";
   const [isHover, setIsHover] = useState(false);
   const { homeDatas, loading } = GetHomeData();
   const { socials, loading: socialsLoading } = GetSocials();
 
   const data = homeDatas;
+  const themeColor = data.color;
+
   return (
     <AnimatePresence>
       <AppLayout>

@@ -1,12 +1,12 @@
 import { ExperienceCard } from "../components/AboutComponents/ExperienceCard";
 import { Title } from "../components/share/Title";
-import React, { useState } from "react";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Photo from "../assets/homeColor.png";
 //icons
 import { BsAwardFill } from "react-icons/bs";
 import { RiServiceFill } from "react-icons/ri";
-import { AiFillProject } from "react-icons/ai";
+
 import { MdOutlineCastForEducation } from "react-icons/md";
 import { MdOutlineDraw } from "react-icons/md";
 import { FaCode } from "react-icons/fa";
@@ -15,9 +15,10 @@ import { FaServer } from "react-icons/fa";
 import { FaPhotoVideo } from "react-icons/fa";
 import { ContactBtn } from "../components/share/ContactBtn";
 import AppLayout from "../layouts/AppLayout";
+import { UseColor } from "../hooks/UseColor";
 
 const AboutPage = () => {
-  const themeColor = "#c9a227";
+  const themeColor = UseColor();
 
   return (
     <AnimatePresence>

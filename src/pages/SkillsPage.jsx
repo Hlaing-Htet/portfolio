@@ -6,6 +6,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import AppLayout from "../layouts/AppLayout";
 import { GetSkillsCat } from "../service/SkillsCat/GetSkillsCat";
 import ContentLoader from "react-content-loader";
+import { UseColor } from "../hooks/UseColor";
 const MyLoader = () => (
   <ContentLoader
     height={20}
@@ -22,7 +23,7 @@ const MyLoader = () => (
   </ContentLoader>
 );
 const SkillsPage = () => {
-  const themeColor = "#c9a227";
+  const themeColor = UseColor();
   const { skillsCats, loading } = GetSkillsCat();
 
   console.log(skillsCats, loading);

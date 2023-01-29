@@ -4,8 +4,9 @@ import ReactAudioPlayer from "react-audio-player";
 import { SiYoutubemusic } from "react-icons/si";
 import { motion } from "framer-motion";
 import { BiMusic } from "react-icons/bi";
+import { UseColor } from "../../hooks/UseColor";
 const MusicPlayer = () => {
-  const themeColor = "#c9a227";
+  const themeColor = UseColor();
 
   const [click, setClick] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });

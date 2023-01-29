@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { UseColor } from "../../hooks/UseColor";
 export function Skill({ skill, index }) {
-  const themeColor = "#c9a227";
+  const themeColor = UseColor();
 
   return (
     <motion.div

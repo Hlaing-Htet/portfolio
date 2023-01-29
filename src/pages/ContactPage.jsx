@@ -9,9 +9,10 @@ import { GrSend } from "react-icons/gr";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import { GetSocials } from "../service/Socials/GetSocials";
+import { UseColor } from "../hooks/UseColor";
 const ContactPage = () => {
   const { socials, loading } = GetSocials();
-  const themeColor = "#c9a227";
+  const themeColor = UseColor();
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();

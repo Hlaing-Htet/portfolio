@@ -8,8 +8,9 @@ import { GiSkills } from "react-icons/gi";
 import { AiFillProject } from "react-icons/ai";
 import { AiFillContacts } from "react-icons/ai";
 import { BsPersonBoundingBox } from "react-icons/bs";
+import { UseColor } from "../../hooks/UseColor";
 const Navbar = () => {
-  const themeColor = "#c9a227";
+  const themeColor = UseColor();
 
   return (
     <nav>

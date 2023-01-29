@@ -5,11 +5,12 @@ import { MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { GoPlus } from "react-icons/go";
 import { GetHomeData } from "../service/HomeData/GetHomeData";
+import { UseColor } from "../hooks/UseColor";
 const AdminPage = () => {
   const { homeDatas } = GetHomeData();
   const data = homeDatas;
   console.log(data);
-  const themeColor = "#c9a227";
+  const themeColor = UseColor();
   const handleSubmit = (e) => {
     e.preventDefault();
   };
