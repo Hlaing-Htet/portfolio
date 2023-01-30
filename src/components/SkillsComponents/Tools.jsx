@@ -1,9 +1,23 @@
 import React from "react";
 import { Skill } from "./Skill";
+import ContentLoader from "react-content-loader";
 
 import { useParams } from "react-router-dom";
 import { useSkillsCatContext } from "../../hooks/UseSkillsCatContext";
 import { GetSkillsByCategory } from "../../service/Skills/GetSkillsByCategory";
+const MyLoader = () => (
+  <ContentLoader
+    height={200}
+    width={"100%"}
+    speed={1}
+    backgroundColor={"#333"}
+    foregroundColor={"#999"}
+  >
+    {/* Only SVG shapes */}
+
+    <rect x="30" y="30" rx="5" ry="5" width="300" height="100%" />
+  </ContentLoader>
+);
 export function Tools() {
   const { name } = useParams();
   const { skillsCats } = useSkillsCatContext();
@@ -19,11 +33,11 @@ export function Tools() {
     );
   }
 
-  const { _id: id } = skillsCats.find((skillsCat) => skillsCat.name === name);
+  const { _id: id } = skillsCats?.find((skillsCat) => skillsCat.name === name);
 
   const { skills, loading } = GetSkillsByCategory({ id });
   if (loading) {
-    return <p>loading</p>;
+    return <MyLoader />;
   }
 
   return (

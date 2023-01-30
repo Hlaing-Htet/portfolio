@@ -32,15 +32,18 @@ const App = () => {
       <MusicPlayer />
       <BrowserRouter>
         <Routes>
+          <Route path="*" element={<Navigate to={"/"} />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/skills" element={<SkillsPage />}>
             <Route path=":name" element={<Tools />} />
+
             <Route
               path=""
               element={<Navigate to={`/skills/${skillsCats[0]?.name}`} />}
             />
           </Route>
+
           <Route path="/projects" element={<ProjectsPage />}>
             <Route path=":name" element={<ProjectsByTitle />} />
             <Route path="all" element={<AllProjects />} />

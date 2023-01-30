@@ -22,7 +22,7 @@ export const GetHomeData = () => {
 
       if (response.ok) {
         setLoading(false);
-        console.log(json.result);
+
         if (json.result.length > 0) {
           localStorage.setItem("color", JSON.stringify(json?.result[0]?.color));
         }

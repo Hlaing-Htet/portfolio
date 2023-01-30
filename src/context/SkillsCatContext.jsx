@@ -10,7 +10,7 @@ export const skillsCatReducer = (state, action) => {
       };
     case "ADD_SKILLSCAT":
       return {
-        skillsCats: [action.payload, ...state.skillsCats],
+        skillsCats: [...state.skillsCats, action.payload],
       };
     case "DELETE_SKILLSCAT":
       return {

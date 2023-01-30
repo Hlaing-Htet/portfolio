@@ -17,10 +17,8 @@ const Home = () => {
   const onSubmit = PostHomeData({});
   const { homeDatas, loading } = GetHomeData();
   if (loading && socialsLoading) {
-    return <p>Loading</p>;
+    return;
   }
-
-  const data = homeDatas;
 
   return (
     <div className="dark:text-dark_textcolor  h-screen overflow-auto">
@@ -44,12 +42,12 @@ const Home = () => {
       >
         {homeDatas ? (
           <>
-            <HomePhoto data={data} />
-            <HomeEditTitleDesc data={data} val="work_title" />
-            <HomeEditTitleDesc data={data} val="desc" />
-            <HomeTypedTexts data={data} />
+            <HomePhoto data={homeDatas} />
+            <HomeEditTitleDesc data={homeDatas} val="work_title" />
+            <HomeEditTitleDesc data={homeDatas} val="desc" />
+            <HomeTypedTexts data={homeDatas} />
             <HomeSocial />
-            <Theme data={data} />
+            <Theme data={homeDatas} />
           </>
         ) : (
           <div className=" h-96 flex items-center justify-center">

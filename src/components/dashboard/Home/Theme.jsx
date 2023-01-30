@@ -4,10 +4,13 @@ import { ImCancelCircle } from "react-icons/im";
 import { PatchHomeData } from "../../../service/HomeData/PatchHomeData";
 import { PhotoshopPicker } from "react-color";
 import { motion } from "framer-motion";
-export function Theme({ data, val }) {
+import { useEffect } from "react";
+export function Theme({ data }) {
   const [themeColor, setThemeColor] = useState(data?.color);
   const [edit, setEdit] = useState(false);
-
+  useEffect(() => {
+    setThemeColor(data.color);
+  }, [data.color]);
   const handleEdit = PatchHomeData({
     id: data?._id,
     data: { color: themeColor },

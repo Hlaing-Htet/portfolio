@@ -5,11 +5,26 @@ import Masonry from "react-masonry-css";
 import ProjectDetail from "./ProjectDetail";
 import { useProjectsCatContext } from "../../hooks/UseProjectsCatContext";
 import { GetProjectsByCategory } from "../../service/Projects/GetProjectsByCategory";
+import ContentLoader from "react-content-loader";
+
 const breakPoints = {
   default: 3,
   640: 1,
   1100: 2,
 };
+const MyLoader = () => (
+  <ContentLoader
+    height={200}
+    width={"100%"}
+    speed={1}
+    backgroundColor={"#333"}
+    foregroundColor={"#999"}
+  >
+    {/* Only SVG shapes */}
+
+    <rect x="30" y="30" rx="5" ry="5" width="300" height="100%" />
+  </ContentLoader>
+);
 const ProjectsByTitle = () => {
   const { name } = useParams();
 
@@ -18,7 +33,7 @@ const ProjectsByTitle = () => {
 
   const { projects, loading } = GetProjectsByCategory({ id: id._id });
   if (loading) {
-    return <p>loaing</p>;
+    return <MyLoader />;
   }
 
   return (

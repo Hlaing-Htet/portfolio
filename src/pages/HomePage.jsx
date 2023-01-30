@@ -205,7 +205,7 @@ const HomePage = () => {
                   className=" p-3 sm:w-4/5 md:w-3/4"
                   style={{ backgroundColor: themeColor }}
                 >
-                  <p className=" text-base sm:text-lg md:text-xl text-light_textcolor font-medium text-center md:text-start">
+                  <p className=" text-base sm:text-lg md:text-xl text-light_textcolor dark:text-dark_textcolor font-medium text-center md:text-start">
                     {data ? data?.work_title : "Work Title"}
                   </p>
                 </div>

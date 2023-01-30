@@ -1,12 +1,18 @@
 import React, { useState } from "react";
+import { memo } from "react";
 import { useEffect } from "react";
 import { FiEdit } from "react-icons/fi";
 import { ImCancelCircle } from "react-icons/im";
 import { PatchHomeData } from "../../../service/HomeData/PatchHomeData";
-export function HomeTypedTexts({ data }) {
+export const HomeTypedTexts = memo(function HomeTypedTexts({ data }) {
   const [edit, setEdit] = useState(false);
   const [value, setValue] = useState(data?.typed_text);
   const [addValue, setAddValue] = useState("");
+
+  useEffect(() => {
+    setValue(data.typed_text);
+  }, [data.typed_text]);
+
   const handleEdit = PatchHomeData({
     id: data?._id,
     data: { typed_text: value },
@@ -85,4 +91,4 @@ export function HomeTypedTexts({ data }) {
       </div>
     </div>
   );
-}
+});

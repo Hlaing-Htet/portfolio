@@ -26,8 +26,6 @@ const SkillsPage = () => {
   const themeColor = UseColor();
   const { skillsCats, loading } = GetSkillsCat();
 
-  console.log(skillsCats, loading);
-
   return (
     <AnimatePresence>
       <AppLayout>
