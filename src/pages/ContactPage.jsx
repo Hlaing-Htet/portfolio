@@ -33,7 +33,7 @@ const ContactPage = () => {
   return (
     <AnimatePresence>
       <AppLayout>
-        <div className=" dark:bg-dark_background h-screen flex-grow flex flex-col overflow-x-hidden">
+        <div className=" bg-light_background dark:bg-dark_background h-screen flex-grow flex flex-col overflow-x-hidden">
           <Toaster position="top-right" reverseOrder={false} />
           <header className=" bg-light_background dark:bg-dark_background z-10  sticky top-0 py-5">
             <Title name={"Contact"} />

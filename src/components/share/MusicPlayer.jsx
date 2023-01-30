@@ -5,7 +5,9 @@ import { SiYoutubemusic } from "react-icons/si";
 import { motion } from "framer-motion";
 import { BiMusic } from "react-icons/bi";
 import { UseColor } from "../../hooks/UseColor";
+import { GetMusic } from "../../service/Music/GetMusics";
 const MusicPlayer = () => {
+  const { musics, loading } = GetMusic();
   const themeColor = UseColor();
 
   const [click, setClick] = useState(false);
@@ -24,7 +26,10 @@ const MusicPlayer = () => {
       window.removeEventListener("mousemove", mouseMove);
     };
   }, []);
-
+  if (loading) {
+    return;
+  }
+  const urlLink = `${import.meta.env.VITE_IMG_URL}/${musics[0]?.title}`;
   const variants = {
     default: {
       x: mousePosition.x - 2,
@@ -35,40 +40,42 @@ const MusicPlayer = () => {
 
   return (
     <>
-      <div className=" fixed top-1/2 -translate-y-1/2 right-3 z-20">
-        <motion.button
-          animate={
-            click
-              ? {
-                  rotate: 360,
-                }
-              : {
-                  rotate: 0,
-                }
-          }
-          transition={
-            click && {
-              ease: "linear",
-              duration: 2,
-              repeat: Infinity,
+      {musics.length !== 0 && musics[0].show && (
+        <div className=" fixed top-1/2 -translate-y-1/2 right-3 z-20">
+          <motion.button
+            animate={
+              click
+                ? {
+                    rotate: 360,
+                  }
+                : {
+                    rotate: 0,
+                  }
             }
-          }
-        >
-          <SiYoutubemusic
-            className=" text-5xl bg-light_background_soft dark:bg-dark_background_soft rounded-full shadow-xl "
-            style={{ color: themeColor }}
+            transition={
+              click && {
+                ease: "linear",
+                duration: 2,
+                repeat: Infinity,
+              }
+            }
+          >
+            <SiYoutubemusic
+              className=" text-5xl bg-light_background_soft dark:bg-dark_background_soft rounded-full shadow-xl "
+              style={{ color: themeColor }}
+            />
+          </motion.button>
+          <ReactAudioPlayer
+            onPlay={() => setClick(true)}
+            onPause={() => setClick(false)}
+            loop={true}
+            src={urlLink}
+            controls
+            volume={0.1}
+            className={` absolute top-0 opacity-0`}
           />
-        </motion.button>
-        <ReactAudioPlayer
-          onPlay={() => setClick(true)}
-          onPause={() => setClick(false)}
-          loop={true}
-          src={music}
-          controls
-          volume={0.1}
-          className={` absolute top-0 opacity-0`}
-        />
-      </div>
+        </div>
+      )}
       {click && (
         <motion.div
           variants={variants}

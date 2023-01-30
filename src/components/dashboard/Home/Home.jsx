@@ -11,12 +11,15 @@ import { motion } from "framer-motion";
 import { GetSocials } from "../../../service/Socials/GetSocials";
 import { GetHomeData } from "../../../service/HomeData/GetHomeData";
 import { PostHomeData } from "../../../service/HomeData/PostHomeData";
+import { GetMusic } from "../../../service/Music/GetMusics";
 import { Theme } from "./Theme";
+import { Music } from "./Music";
 const Home = () => {
+  const { musics, loading: musicLoading } = GetMusic();
   const { socials, loading: socialsLoading } = GetSocials();
   const onSubmit = PostHomeData({});
   const { homeDatas, loading } = GetHomeData();
-  if (loading && socialsLoading) {
+  if (loading && socialsLoading && musicLoading) {
     return;
   }
 
@@ -48,6 +51,7 @@ const Home = () => {
             <HomeTypedTexts data={homeDatas} />
             <HomeSocial />
             <Theme data={homeDatas} />
+            <Music />
           </>
         ) : (
           <div className=" h-96 flex items-center justify-center">

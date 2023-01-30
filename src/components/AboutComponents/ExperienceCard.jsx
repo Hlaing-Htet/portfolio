@@ -12,6 +12,9 @@ export function ExperienceCard({ children, name, parag }) {
       animate={{
         x: 0,
       }}
+      whileHover={{
+        scale: 0.9,
+      }}
       transition={{
         delay: 0.2,
         type: "spring",

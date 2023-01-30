@@ -25,7 +25,7 @@ export function Tools() {
     return (
       <div className="">
         <div className=" grid  p-3 md:p-5 gap-5 grid-cols-1 h-96">
-          <div className=" bg-dark_textcolor flex items-center justify-center">
+          <div className=" bg-light_background_soft flex items-center justify-center">
             <h2 className=" font-semibold text-xl">There is nothing !</h2>
           </div>
         </div>
@@ -41,7 +41,7 @@ export function Tools() {
   }
 
   return (
-    <div className="">
+    <div className=" ">
       <div className=" grid  p-3 md:p-5 gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {skills?.map(
           (skill, index) =>

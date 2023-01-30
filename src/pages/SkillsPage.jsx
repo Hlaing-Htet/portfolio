@@ -29,7 +29,7 @@ const SkillsPage = () => {
   return (
     <AnimatePresence>
       <AppLayout>
-        <div className=" dark:bg-dark_background h-screen flex-grow overflow-x-hidden">
+        <div className=" bg-light_background dark:bg-dark_background h-screen flex-grow overflow-x-hidden">
           <div className=" bg-light_background dark:bg-dark_background z-10  sticky top-0 pt-5">
             <Title name={"Skills"} />
             <nav

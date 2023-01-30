@@ -96,7 +96,7 @@ const AdminPage = () => {
             <div className=" ">
               <input
                 type="text"
-                className="w-full p-3 dark:bg-dark_textcolor focus:outline-none focus dark:text-dark_textcolor focus:bg-dark_background"
+                className="w-full p-3 dark:bg-dark_textcolor  focus:outline-none focus text-dark_background focus:text-dark_textcolor focus:bg-dark_background"
                 name=""
                 placeholder="Username"
                 id=""
@@ -105,7 +105,7 @@ const AdminPage = () => {
             <div className=" ">
               <input
                 type="password"
-                className=" w-full p-3 dark:bg-dark_textcolor focus:outline-none dark:text-dark_textcolor focus:bg-dark_background"
+                className=" w-full p-3 dark:bg-dark_textcolor focus:outline-none text-dark_background focus:text-dark_textcolor focus:bg-dark_background"
                 placeholder="Password"
                 name=""
                 id=""

@@ -8,6 +8,7 @@ import { SkillsCatsContextProvider } from "./context/SkillsCatContext";
 import { SkillsContextProvider } from "./context/SkillsContext";
 import { ProjectsCatsContextProvider } from "./context/ProjectsCatContext";
 import { ProjectsContextProvider } from "./context/ProjectsContext";
+import { MusicContextProvider } from "./context/MusicContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <HomeContextProvider>
@@ -16,7 +17,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <SkillsContextProvider>
           <ProjectsCatsContextProvider>
             <ProjectsContextProvider>
-              <App />
+              <MusicContextProvider>
+                <App />
+              </MusicContextProvider>
             </ProjectsContextProvider>
           </ProjectsCatsContextProvider>
         </SkillsContextProvider>
