@@ -9,7 +9,7 @@ import { UseColor } from "../hooks/UseColor";
 const AdminPage = () => {
   const { homeDatas } = GetHomeData();
   const data = homeDatas;
-  console.log(data);
+
   const themeColor = UseColor();
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FiEdit } from "react-icons/fi";
 import { ImCancelCircle } from "react-icons/im";
 import { PatchHomeData } from "../../../service/HomeData/PatchHomeData";
 export function HomeEditTitleDesc({ data, val }) {
   const [edit, setEdit] = useState(false);
   const [value, setValue] = useState(data?.[val]);
+
   const updateData = {
     [val]: value,
   };
-
+  useEffect(() => {
+    setValue(data?.[val]);
+  }, [data]);
   const handleEdit = PatchHomeData({
     id: data?._id,
     data: updateData,
