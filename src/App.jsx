@@ -20,6 +20,7 @@ import Contact from "./components/dashboard/Contact/Contact";
 import { GetSkillsCat } from "./service/SkillsCat/GetSkillsCat";
 
 import AllProjects from "./components/ProjectsComponents/AllProjects";
+import PageNotFound from "./pages/PageNotFound";
 
 const App = () => {
   const { skillsCats, loading } = GetSkillsCat();
@@ -32,7 +33,7 @@ const App = () => {
       <MusicPlayer />
       <BrowserRouter>
         <Routes>
-          <Route path="*" element={<Navigate to={"/"} />} />
+          <Route path="*" element={<PageNotFound />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/skills" element={<SkillsPage />}>

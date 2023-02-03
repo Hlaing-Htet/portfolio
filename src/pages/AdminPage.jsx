@@ -29,7 +29,7 @@ const AdminPage = () => {
           initial={{ y: "100vh" }}
           animate={{ y: 0 }}
           transition={{ delay: 0.2 }}
-          className=" hidden md:block col-span-1 relative"
+          className=" hidden  col-span-1 relative md:flex items-center justify-center"
         >
           <motion.div
             animate={{
@@ -70,12 +70,12 @@ const AdminPage = () => {
               repeat: Infinity,
             }}
             src={`${import.meta.env.VITE_IMG_URL}/${data.image}`}
-            className=" saturate-0 w-full   "
+            className=" saturate-0 w-full hover:saturate-100 duration-100"
             alt=""
           />
         </motion.div>
         <div
-          className=" col-span-1 flex flex-col py-20 px-10 md:py-0 gap-10 items-center justify-center"
+          className=" col-span-1 flex flex-col py-20 px-10 gap-10 items-center justify-center"
           style={{ backgroundColor: themeColor }}
         >
           <motion.h1

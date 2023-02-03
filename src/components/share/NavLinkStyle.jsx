@@ -24,7 +24,7 @@ export function NavLinkStyle({ to, children, text }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, scale: 1.1 }}
             exit={{ opacity: 0 }}
-            className=" absolute z-10 w-28 text-center top-0 h-full px-3 rounded-sm left-16"
+            className=" absolute shadow-md z-10 w-28 text-center top-0 h-full px-3 rounded-sm left-16"
             style={{ backgroundColor: themeColor }}
           >
             {text}

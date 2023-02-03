@@ -14,14 +14,12 @@ const ContactPage = () => {
   const { socials, loading } = GetSocials();
   const themeColor = UseColor();
   const form = useRef();
+  let a = "service_ukvwg29";
+  let b = "template_z23vf2i";
+  let c = "ef4KyujVfvG2NIcNR";
   const sendEmail = (e) => {
     e.preventDefault();
-    const myPromise = emailjs.sendForm(
-      "service_ukvwg29",
-      "template_z23vf2i",
-      form.current,
-      "ef4KyujVfvG2NIcNR"
-    );
+    const myPromise = emailjs.sendForm(a, b, form.current, c);
     toast.promise(myPromise, {
       loading: "sending message ...",
       success: "successfull sended",
@@ -50,7 +48,7 @@ const ContactPage = () => {
                     damping: 25,
                     stiffness: 250,
                   }}
-                  className=" w-full bg-light_background_soft dark:bg-dark_background_soft p-5 flex flex-col items-center gap-2  duration-100  font-medium"
+                  className=" shadow-md w-full bg-light_background_soft dark:bg-dark_background_soft p-5 flex flex-col items-center gap-2  duration-100  font-medium"
                 >
                   <RiMessengerLine
                     className=" text-5xl"
@@ -77,7 +75,7 @@ const ContactPage = () => {
                     damping: 25,
                     stiffness: 250,
                   }}
-                  className=" p-5 w-full flex flex-col items-center gap-2 font-medium bg-light_background_soft dark:bg-dark_background_soft  duration-100 "
+                  className=" shadow-md p-5 w-full flex flex-col items-center gap-2 font-medium bg-light_background_soft dark:bg-dark_background_soft  duration-100 "
                 >
                   <MdOutlineEmail
                     className=" text-5xl"
@@ -102,7 +100,7 @@ const ContactPage = () => {
                     damping: 25,
                     stiffness: 250,
                   }}
-                  className=" w-full bg-light_background_soft dark:bg-dark_background_soft p-5 flex flex-col items-center  duration-100 gap-2 font-medium"
+                  className=" shadow-md w-full bg-light_background_soft dark:bg-dark_background_soft p-5 flex flex-col items-center  duration-100 gap-2 font-medium"
                 >
                   <AiOutlinePhone
                     className=" text-5xl"
@@ -138,7 +136,7 @@ const ContactPage = () => {
                     name="name"
                     placeholder="Your Full Name"
                     required
-                    className=" p-3 focus:outline-none focus:bg-light_textcolor focus:text-light_background dark:focus:bg-dark_textcolor dark:focus:text-dark_background  bg-light_background_soft dark:bg-dark_background_soft"
+                    className=" shadow-md p-3 focus:outline-none focus:bg-light_textcolor focus:text-light_background dark:focus:bg-dark_textcolor dark:focus:text-dark_background  bg-light_background_soft dark:bg-dark_background_soft"
                   />
                   <motion.input
                     initial={{ x: "100vw" }}
@@ -152,7 +150,7 @@ const ContactPage = () => {
                     type="email"
                     name="email"
                     placeholder="Your Email"
-                    className=" p-3 focus:outline-none focus:bg-light_textcolor focus:text-light_background dark:focus:bg-dark_textcolor dark:focus:text-dark_background bg-light_background_soft dark:bg-dark_background_soft"
+                    className=" shadow-md p-3 focus:outline-none focus:bg-light_textcolor focus:text-light_background dark:focus:bg-dark_textcolor dark:focus:text-dark_background bg-light_background_soft dark:bg-dark_background_soft"
                     required
                   />
                   <motion.textarea
@@ -167,7 +165,7 @@ const ContactPage = () => {
                     name="message"
                     rows="10"
                     placeholder="Your Message"
-                    className=" p-3 focus:outline-none focus:bg-light_textcolor focus:text-light_background dark:focus:bg-dark_textcolor dark:focus:text-dark_background  bg-light_background_soft dark:bg-dark_background_soft"
+                    className=" shadow-md p-3 focus:outline-none focus:bg-light_textcolor focus:text-light_background dark:focus:bg-dark_textcolor dark:focus:text-dark_background  bg-light_background_soft dark:bg-dark_background_soft"
                     required
                   ></motion.textarea>
                   <motion.button
@@ -183,7 +181,7 @@ const ContactPage = () => {
                     className=" w-fit mx-auto  text-dark_background font-semibold"
                   >
                     <div
-                      className="hover:scale-110 w-full duration-100  flex gap-3 items-center p-3"
+                      className="hover:scale-110 shadow-md w-full duration-100  flex gap-3 items-center p-3"
                       style={{ backgroundColor: themeColor }}
                     >
                       Sent <GrSend className=" text-xl " />
