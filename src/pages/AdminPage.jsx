@@ -59,20 +59,24 @@ const AdminPage = () => {
           >
             <GoPlus className=" text-2xl  " style={{ color: themeColor }} />
           </motion.div>
-          <motion.img
-            animate={{
-              x: [0, 5, -5, 0],
-              rotate: [0, 1, -1, 0],
-            }}
-            transition={{
-              ease: "linear",
-              duration: 5,
-              repeat: Infinity,
-            }}
-            src={`${import.meta.env.VITE_IMG_URL}/${data.image}`}
-            className=" saturate-0 w-full hover:saturate-100 duration-100"
-            alt=""
-          />
+          {data?.image ? (
+            <motion.img
+              animate={{
+                x: [0, 5, -5, 0],
+                rotate: [0, 1, -1, 0],
+              }}
+              transition={{
+                ease: "linear",
+                duration: 5,
+                repeat: Infinity,
+              }}
+              src={`${import.meta.env.VITE_IMG_URL}/${data?.image}`}
+              className=" saturate-0 w-full hover:saturate-100 duration-100"
+              alt=""
+            />
+          ) : (
+            <p>loading</p>
+          )}
         </motion.div>
         <div
           className=" col-span-1 flex flex-col py-20 px-10 gap-10 items-center justify-center"
