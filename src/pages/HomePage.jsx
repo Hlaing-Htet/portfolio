@@ -36,7 +36,7 @@ const HomePage = () => {
   const { socials, loading: socialsLoading } = GetSocials();
 
   const data = homeDatas;
-  const themeColor = data.color;
+  const themeColor = data?.color;
 
   return (
     <AnimatePresence>
